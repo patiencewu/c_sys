@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans
-	xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
 
 
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/cc_sys">
+			value="jdbc:mysql://localhost:3306/c_sys?useUnicode=true&amp;characterEncoding=utf8">
 		</property>
 		<property name="username" value="root"></property>
 	</bean>
@@ -18,11 +18,27 @@
 		<property name="dataSource">
 			<ref bean="dataSource" />
 		</property>
+		
+		<!-- 注册Hibernate的ORM映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>org/humanDepartment/humanSystem/pojo/Department.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Departmentemployee.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Departmentmanager.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Manager.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Supermanager.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Team.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Userpassword.hbm.xml</value>
+			</list>
+		</property>
+		
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">
 					org.hibernate.dialect.MySQLDialect
 				</prop>
+				<!-- 设置在控制台输出SQL语句 -->
+				<prop key="show_sql">true</prop>
 			</props>
 		</property>
 	</bean>
@@ -30,4 +46,86 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<tx:annotation-driven transaction-manager="transactionManager" /></beans>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- 定义Spring的事物拦截器 -->
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor"
+		abstract="false" lazy-init="default" autowire="default">
+		<!-- 依赖注入transactionManager -->
+		<property name="transactionManager" ref="transactionManager"/>
+	</bean>
+	<bean id="department"
+		class="org.humanDepartment.humanSystem.pojo.Department"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="departmentEmployee"
+		class="org.humanDepartment.humanSystem.pojo.Departmentemployee"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="departmentManager"
+		class="org.humanDepartment.humanSystem.pojo.Departmentmanager"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="members"
+		class="org.humanDepartment.humanSystem.pojo.Members" abstract="false"
+		lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="superManager"
+		class="org.humanDepartment.humanSystem.pojo.Supermanager"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="team" class="org.humanDepartment.humanSystem.pojo.Team"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="userPassword"
+		class="org.humanDepartment.humanSystem.pojo.Userpassword"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="departmentManagerToEmployee"
+		class="org.humanDepartment.humanSystem.action.DepartmentManagerToEmployee"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="departmentToMember"
+		class="org.humanDepartment.humanSystem.action.DepartmentToMember"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="departmentToTeam"
+		class="org.humanDepartment.humanSystem.action.DepartmentToTeam"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="login"
+		class="org.humanDepartment.humanSystem.action.Login" abstract="false"
+		lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="memberToTeam"
+		class="org.humanDepartment.humanSystem.action.MemberToTeam"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="superManagerToDepartmentManager"
+		class="org.humanDepartment.humanSystem.action.SuperMangerToDepartmentManager"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="teamToDepartment"
+		class="org.humanDepartment.humanSystem.action.TeamToDepartment"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="teamToMember"
+		class="org.humanDepartment.humanSystem.action.TeamToMember"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	</beans>
