@@ -25,7 +25,7 @@
 				<value>org/humanDepartment/humanSystem/pojo/Department.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Departmentemployee.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Departmentmanager.hbm.xml</value>
-				<value>org/humanDepartment/humanSystem/pojo/Manager.hbm.xml</value>
+				<value>org/humanDepartment/humanSystem/pojo/Members.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Supermanager.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Team.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Userpassword.hbm.xml</value>
@@ -54,6 +54,18 @@
 		abstract="false" lazy-init="default" autowire="default">
 		<!-- 依赖注入transactionManager -->
 		<property name="transactionManager" ref="transactionManager"/>
+		<!-- 定义需要进行事物拦截的方法及所采用的事物类型 -->
+		<property name="transactionAttributes">
+			<props>
+				<!-- 以browse、list、load、get及is开头的所有方法采用只读型事物控制类型 -->
+				<prop key="browse">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="list">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="load">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="get">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="is*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
 	</bean>
 	<bean id="department"
 		class="org.humanDepartment.humanSystem.pojo.Department"
