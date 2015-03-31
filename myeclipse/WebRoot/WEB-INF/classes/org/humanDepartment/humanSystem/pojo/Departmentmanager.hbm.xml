@@ -40,5 +40,8 @@
         <property name="dmPostcode" type="java.lang.Short">
             <column name="dm_postcode" />
         </property>
+        <property name="dmDepartmentId" type="java.lang.Boolean">
+            <column name="dm_departmentId" />
+        </property>
     </class>
 </hibernate-mapping>

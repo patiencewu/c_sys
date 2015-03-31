@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超级管理员 添加部长信息</title>
+<link rel="stylesheet" type="text/css" href="css/addM.css"/>
+
+
+<script language="javascript" type="text/javascript">
+  function yes()
+  {
+	  if (confirm("确定提交信息？"))
+	  {
+		  alert("信息成功提交。");
+		  close();
+      }
+  }
+  
+    function no()
+  {
+	  if (confirm("放弃添加信息？"))
+	  {
+		  close();
+      }
+  }
+</script>
+
+</head>
+
+<body class="body" background="images/bg.jpg">
+  <div class="title">&nbsp;&nbsp;&nbsp;添加部长信息</div>
+  <div class="b1"></div>
+  
+  <div>
+  <table class="table">
+    <tr>
+    <td align="right">部长ID：</td>
+    <td align="left"><input name="idP" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">姓名：</td>
+    <td align="left"><input name="name" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">性别：</td>
+    <td align="left"><p>
+      <label>
+        <input type="radio" name="sex" value="male" id="male" />
+        男</label>
+      &nbsp;&nbsp;&nbsp;
+      <label>
+        <input type="radio" name="sex" value="female" id="female" />
+        女</label>
+      <br />
+    </p></td>
+    <td align="right">生日：</td>
+    <td align="left"><input name="date" type="text" style="width:150px; height:20px; font-size: 14px;" /></td> <!-- 有待改善 用jQuery或js+AJAX-->
+  </tr>
+  <tr>
+    <td align="right">电话：</td>
+    <td align="left"><input name="telLong" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">华农短号：</td>
+    <td align="left"><input name="telShort" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">e-Mail：</td>
+    <td align="left"><input name="email" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">邮编：</td>
+    <td align="left"><input name="postcode" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+  </tr>
+  <tr>
+    <td align="right">所属部门ID：</td>
+    <td align="left"><input name="idD" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">其他联系方式：</td>
+    <td align="left"><input name="other" type="text" style="width:150px; height:20px; font-size: 14px;" /></td>
+    <td align="right">地址：</td>
+    <td align="left" colspan="3"><input name="address" type="text" style="width:374px; height:20px; font-size: 14px;" /></td>
+  </tr>
+  <tr>
+    <td align="right">照片：</td>
+    <td align="left" colspan="3">
+      <input class="input_text" type="text" id="txt" name="txt" />
+      <input type="button" value="浏览" />
+      <input class="input_file" size="30" type="file" onchange="txt.value=this.value" />(尺寸为96x192)</td>
+  </tr>
+</table>
+  </div>
+  <div class="b1"></div>
+  <div class="buttonArea"> <!-- 按钮 -->
+    <div class="button"><a href="javascript: yes()"><img src="images/yes.jpg" /></a></div>
+    <div class="b2"></div>
+    <div class="button"><a href="javascript: no()"><img src="images/no.jpg" /></a></div>
+  </div>
+</body>
+</html>

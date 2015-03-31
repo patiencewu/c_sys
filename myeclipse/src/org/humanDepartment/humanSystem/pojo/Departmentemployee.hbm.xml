@@ -49,5 +49,8 @@
         <property name="dePostcode" type="java.lang.Short">
             <column name="de_postcode" />
         </property>
+        <property name="deDepartmentId" type="java.lang.Boolean">
+            <column name="de_departmentId" />
+        </property>
     </class>
 </hibernate-mapping>

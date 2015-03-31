@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+.left{
+	width: 96px;
+	height: 128px;
+	margin: 0px;
+	float: left;
+}
+
+.midBlank{
+	width: 14px;
+	height: 128px;
+	margin: 0;
+	float: left;
+}
+
+.right{
+	width: 870px;
+	height: 220px;
+	margin: 0;
+	float: left;
+}
+
+.table{
+	border: 3px solid #2e96cf;
+	cellspacing: 0px;
+	cellpadding: 0px;
+	width: 880px;
+	height: 220px;
+	font-size: 14px;
+	font-family: "宋体";
+	background-color: #FFF;
+}
+
+.button{
+	width: 90px;
+	height: 40px;
+}

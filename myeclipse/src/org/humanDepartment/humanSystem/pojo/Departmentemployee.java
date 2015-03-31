@@ -28,6 +28,7 @@ public class Departmentemployee implements java.io.Serializable
 	private String deMajor;
 	private String deClass;
 	private Short dePostcode;
+	private Boolean deDepartmentId;
 
 
 	// Constructors
@@ -56,7 +57,8 @@ public class Departmentemployee implements java.io.Serializable
 							  String deCollege,
 							  String deMajor,
 							  String deClass,
-							  Short dePostcode)
+							  Short dePostcode,
+							  Boolean deDepartmentId)
 	{
 		this.deName = deName;
 		this.deSex = deSex;
@@ -71,6 +73,7 @@ public class Departmentemployee implements java.io.Serializable
 		this.deMajor = deMajor;
 		this.deClass = deClass;
 		this.dePostcode = dePostcode;
+		this.deDepartmentId = deDepartmentId;
 	}
 
 
@@ -214,6 +217,16 @@ public class Departmentemployee implements java.io.Serializable
 	public void setDePostcode(Short dePostcode)
 	{
 		this.dePostcode = dePostcode;
+	}
+
+	public Boolean getDeDepartmentId()
+	{
+		return this.deDepartmentId;
+	}
+
+	public void setDeDepartmentId(Boolean deDepartmentId)
+	{
+		this.deDepartmentId = deDepartmentId;
 	}
 
 

@@ -2,4 +2,30 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 
+	<!-- 设置web应用的默认编码集为utf8 -->
+	<constant name="struts.i18n.encoding" value="utf8"/>
+	<!-- 设置web应用的默认ObjectFactory为spring -->
+	<constant name="struts.objectFactory" value="spring"/>
+	<!-- 设置Struts2应用是否处于开发模式，开发为true，正式上线为false -->
+	<constant name="struts.devMode" value="true"/>
+	
+	
+	<include file="struts-default.xml"/>
+
+	<package name="allaction" extends="struts-default">
+	
+	<!-- 全局的 -->
+	<global-results>  
+	<result name="teamHead">/jsp/humanDepartment/peopleTeamManage/teamHead.html</result>
+	<result name="login">/jsp/humanDepartment/peopleTeamManage/login.jsp</result>
+	<result name="superManager">/jsp/humanDepartment/peopleTeamManage/superManager.html</result>
+	</global-results>
+	</package>
+	 
+	<package name="admin" extends="allaction">
+	<action name="Login" class="login">
+	</action>
+	</package>
+
+
 </struts>    

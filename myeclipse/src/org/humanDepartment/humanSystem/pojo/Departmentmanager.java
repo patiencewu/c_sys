@@ -25,6 +25,7 @@ public class Departmentmanager implements java.io.Serializable
 	private String dmOtherContactInformation;
 	private String dmPhoto;
 	private Short dmPostcode;
+	private Boolean dmDepartmentId;
 
 
 	// Constructors
@@ -50,7 +51,8 @@ public class Departmentmanager implements java.io.Serializable
 							 String dmAddress,
 							 String dmOtherContactInformation,
 							 String dmPhoto,
-							 Short dmPostcode)
+							 Short dmPostcode,
+							 Boolean dmDepartmentId)
 	{
 		this.dmName = dmName;
 		this.dmSex = dmSex;
@@ -62,6 +64,7 @@ public class Departmentmanager implements java.io.Serializable
 		this.dmOtherContactInformation = dmOtherContactInformation;
 		this.dmPhoto = dmPhoto;
 		this.dmPostcode = dmPostcode;
+		this.dmDepartmentId = dmDepartmentId;
 	}
 
 
@@ -175,6 +178,16 @@ public class Departmentmanager implements java.io.Serializable
 	public void setDmPostcode(Short dmPostcode)
 	{
 		this.dmPostcode = dmPostcode;
+	}
+
+	public Boolean getDmDepartmentId()
+	{
+		return this.dmDepartmentId;
+	}
+
+	public void setDmDepartmentId(Boolean dmDepartmentId)
+	{
+		this.dmDepartmentId = dmDepartmentId;
 	}
 
 

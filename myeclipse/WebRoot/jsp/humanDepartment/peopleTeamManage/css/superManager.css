@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+.body {
+	margin-top: 50px;
+	margin-right: 183px;
+	margin-left: 183px;
+}
+
+/*添加部长信息*/
+.new{
+	width: 200px;
+	height: 40px;
+}
+
+.blank{
+	width: 1000px;
+	height: 50px;
+	float:left;
+}
+
+.whole{
+	width: 1000px;
+}
