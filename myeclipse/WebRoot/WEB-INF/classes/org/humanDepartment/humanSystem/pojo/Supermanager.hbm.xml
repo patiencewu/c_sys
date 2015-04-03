@@ -16,5 +16,8 @@
         <property name="smLphone" type="java.lang.String">
             <column name="sm_lphone" length="13" />
         </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="version" />
+        </property>
     </class>
 </hibernate-mapping>

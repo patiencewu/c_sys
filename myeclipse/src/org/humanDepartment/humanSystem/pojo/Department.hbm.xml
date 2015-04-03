@@ -19,5 +19,8 @@
         <property name="DDescription" type="java.lang.String">
             <column name="d_description" />
         </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="version" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -5,7 +5,7 @@ import org.dao.PageResults;
 import org.humanDepartment.humanSystem.pojo.Department;
 import org.humanDepartment.humanSystem.pojo.Departmentemployee;
 
-public class DepartmentmanageremployeeServiceImpl implements
+public class DepartmentemployeeServiceImpl implements
 												 DepartmentemployeeService
 {
 	

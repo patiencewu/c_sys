@@ -22,14 +22,17 @@
         <property name="TTeacher" type="java.lang.String">
             <column name="t_teacher" length="20" />
         </property>
-        <property name="TSetUp" type="java.util.Date">
-            <column name="t_setUp" length="10" not-null="true" />
+        <property name="TSetUpTime" type="java.lang.String">
+            <column name="t_setUpTime" length="10" not-null="true" />
         </property>
         <property name="TStatus" type="java.lang.String">
-            <column name="t_status" length="4" not-null="true" />
+            <column name="t_status" length="0" not-null="true" />
         </property>
         <property name="TLeaderId" type="java.lang.Integer">
             <column name="t_leaderID" not-null="true" />
+        </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="version" />
         </property>
     </class>
 </hibernate-mapping>

@@ -1,11 +1,12 @@
 package org.dao.service;
 
+import java.util.List;
 import org.dao.BaseDao;
 import org.dao.PageResults;
 import org.humanDepartment.humanSystem.pojo.Members;
 import org.humanDepartment.humanSystem.pojo.Userpassword;
 
-public class UserpasswordServiceImpl
+public class UserpasswordServiceImpl implements UserpasswordService
 {
 
 
@@ -45,38 +46,63 @@ public class UserpasswordServiceImpl
 	
 	
 	
-	
-	
-	
 
-	public String add(Userpassword u)
+
+	@Override
+	public String addUser(Userpassword user)
 	{
-		return dao.save(u);
+		return dao.save(user);
 	}
 
-
-	public void delete(Userpassword u)
+	@Override
+	public void delUserById(String userName)
 	{
-		dao.delete(u);
+			dao.deleteById(userName);
 	}
 
-
-	public void update(Userpassword u)
+	@Override
+	public boolean changePassword(String userName,
+								  String oldPassword,
+								  String newPassword)
 	{
-		dao.update(u);
+		Userpassword user;
+		user = dao.get(userName);
+		if(user != null){
+			if(user.getUpPassword().equals(oldPassword))
+				user.setUpPassword(newPassword);
+			return true;
+		}
+		return false;
+
 	}
 
-
-	public Userpassword findById(String id)
+	@Override
+	public Userpassword findLoginUser(String userName, String password)
 	{
-		return dao.get(id);
+		Userpassword user = (Userpassword) dao.getSession().get(Userpassword.class, userName);
+		if(user == null || !user.getUpPassword().equals(password)) return null;
+		return user;
 	}
 
-	public PageResults<Userpassword> findAPage(String hql, String countHql, int pageNo, int pageSize, Object... values)
+	@Override
+	public PageResults<Userpassword> findAllUserInPage(String hql, String countHql, int pageNo, int pageSize, Object... values)
 	{
 		if(hql == null)
 			hql = "from Userpassword as a";
 		return dao.findPageByFetchedHql(hql, countHql, pageNo, pageSize, values);
+	}
+
+	@Override
+	public Userpassword findUserById(String userName)
+	{
+		return dao.get(userName);
+	}
+
+	@Override
+	public void delUser(Userpassword user)
+	{
+		dao.delete(user);
+		
 	}
 
 }

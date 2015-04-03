@@ -4,7 +4,7 @@ import org.dao.BaseDao;
 import org.dao.PageResults;
 import org.humanDepartment.humanSystem.pojo.Departmentmanager;
 
-public class DepartmentmangerServiceImpl implements DepartmentmanagerService
+public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 {
 
 

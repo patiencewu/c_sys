@@ -14,8 +14,8 @@ public class Members implements java.io.Serializable
 
 	private Integer MId;
 	private String MName;
-	private Long MIdNumeber;
-	private Long MStudentNumber;
+	private String MIdNumeber;
+	private String MStudentNumber;
 	private String MSex;
 	private String MBirthday;
 	private String MNation;
@@ -24,17 +24,20 @@ public class Members implements java.io.Serializable
 	private String MSchool;
 	private String MCollege;
 	private String MDepartment;
-	private String MMajor;
 	private String MClass;
-	private String MGrade;
+	private String MMajor;
+	private Integer MGrade;
 	private String MEducationBackground;
 	private Boolean MStudents;
 	private String MSphone;
 	private String MLphone;
 	private String MAddress;
-	private Short MPostcode;
+	private String MPostcode;
 	private String MPhoto;
-	private String MEducationSystem;
+	private Integer MEducationSystem;
+	private String MEmail;
+	private String MHomeAddress;
+	private Integer version;
 
 
 	// Constructors
@@ -45,7 +48,7 @@ public class Members implements java.io.Serializable
 
 	/** minimal constructor */
 	public Members(String MName,
-				   Long MIdNumeber,
+				   String MIdNumeber,
 				   String MSex,
 				   String MNation,
 				   String MNativePlace)
@@ -59,8 +62,8 @@ public class Members implements java.io.Serializable
 
 	/** full constructor */
 	public Members(String MName,
-				   Long MIdNumeber,
-				   Long MStudentNumber,
+				   String MIdNumeber,
+				   String MStudentNumber,
 				   String MSex,
 				   String MBirthday,
 				   String MNation,
@@ -69,17 +72,20 @@ public class Members implements java.io.Serializable
 				   String MSchool,
 				   String MCollege,
 				   String MDepartment,
-				   String MMajor,
 				   String MClass,
-				   String MGrade,
+				   String MMajor,
+				   Integer MGrade,
 				   String MEducationBackground,
 				   Boolean MStudents,
 				   String MSphone,
 				   String MLphone,
 				   String MAddress,
-				   Short MPostcode,
+				   String MPostcode,
 				   String MPhoto,
-				   String MEducationSystem)
+				   Integer MEducationSystem,
+				   String MEmail,
+				   String MHomeAddress,
+				   Integer version)
 	{
 		this.MName = MName;
 		this.MIdNumeber = MIdNumeber;
@@ -92,8 +98,8 @@ public class Members implements java.io.Serializable
 		this.MSchool = MSchool;
 		this.MCollege = MCollege;
 		this.MDepartment = MDepartment;
-		this.MMajor = MMajor;
 		this.MClass = MClass;
+		this.MMajor = MMajor;
 		this.MGrade = MGrade;
 		this.MEducationBackground = MEducationBackground;
 		this.MStudents = MStudents;
@@ -103,6 +109,9 @@ public class Members implements java.io.Serializable
 		this.MPostcode = MPostcode;
 		this.MPhoto = MPhoto;
 		this.MEducationSystem = MEducationSystem;
+		this.MEmail = MEmail;
+		this.MHomeAddress = MHomeAddress;
+		this.version = version;
 	}
 
 
@@ -128,22 +137,22 @@ public class Members implements java.io.Serializable
 		this.MName = MName;
 	}
 
-	public Long getMIdNumeber()
+	public String getMIdNumeber()
 	{
 		return this.MIdNumeber;
 	}
 
-	public void setMIdNumeber(Long MIdNumeber)
+	public void setMIdNumeber(String MIdNumeber)
 	{
 		this.MIdNumeber = MIdNumeber;
 	}
 
-	public Long getMStudentNumber()
+	public String getMStudentNumber()
 	{
 		return this.MStudentNumber;
 	}
 
-	public void setMStudentNumber(Long MStudentNumber)
+	public void setMStudentNumber(String MStudentNumber)
 	{
 		this.MStudentNumber = MStudentNumber;
 	}
@@ -228,16 +237,6 @@ public class Members implements java.io.Serializable
 		this.MDepartment = MDepartment;
 	}
 
-	public String getMMajor()
-	{
-		return this.MMajor;
-	}
-
-	public void setMMajor(String MMajor)
-	{
-		this.MMajor = MMajor;
-	}
-
 	public String getMClass()
 	{
 		return this.MClass;
@@ -248,12 +247,22 @@ public class Members implements java.io.Serializable
 		this.MClass = MClass;
 	}
 
-	public String getMGrade()
+	public String getMMajor()
+	{
+		return this.MMajor;
+	}
+
+	public void setMMajor(String MMajor)
+	{
+		this.MMajor = MMajor;
+	}
+
+	public Integer getMGrade()
 	{
 		return this.MGrade;
 	}
 
-	public void setMGrade(String MGrade)
+	public void setMGrade(Integer MGrade)
 	{
 		this.MGrade = MGrade;
 	}
@@ -308,12 +317,12 @@ public class Members implements java.io.Serializable
 		this.MAddress = MAddress;
 	}
 
-	public Short getMPostcode()
+	public String getMPostcode()
 	{
 		return this.MPostcode;
 	}
 
-	public void setMPostcode(Short MPostcode)
+	public void setMPostcode(String MPostcode)
 	{
 		this.MPostcode = MPostcode;
 	}
@@ -328,14 +337,44 @@ public class Members implements java.io.Serializable
 		this.MPhoto = MPhoto;
 	}
 
-	public String getMEducationSystem()
+	public Integer getMEducationSystem()
 	{
 		return this.MEducationSystem;
 	}
 
-	public void setMEducationSystem(String MEducationSystem)
+	public void setMEducationSystem(Integer MEducationSystem)
 	{
 		this.MEducationSystem = MEducationSystem;
+	}
+
+	public String getMEmail()
+	{
+		return this.MEmail;
+	}
+
+	public void setMEmail(String MEmail)
+	{
+		this.MEmail = MEmail;
+	}
+
+	public String getMHomeAddress()
+	{
+		return this.MHomeAddress;
+	}
+
+	public void setMHomeAddress(String MHomeAddress)
+	{
+		this.MHomeAddress = MHomeAddress;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

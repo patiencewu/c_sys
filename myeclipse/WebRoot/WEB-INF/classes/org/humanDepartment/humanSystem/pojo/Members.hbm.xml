@@ -13,14 +13,14 @@
         <property name="MName" type="java.lang.String">
             <column name="m_name" length="10" not-null="true" />
         </property>
-        <property name="MIdNumeber" type="java.lang.Long">
-            <column name="m_idNumeber" not-null="true" />
+        <property name="MIdNumeber" type="java.lang.String">
+            <column name="m_idNumeber" length="18" not-null="true" />
         </property>
-        <property name="MStudentNumber" type="java.lang.Long">
-            <column name="m_studentNumber" />
+        <property name="MStudentNumber" type="java.lang.String">
+            <column name="m_studentNumber" length="12" />
         </property>
         <property name="MSex" type="java.lang.String">
-            <column name="m_sex" length="2" not-null="true" />
+            <column name="m_sex" length="4" not-null="true" />
         </property>
         <property name="MBirthday" type="java.lang.String">
             <column name="m_birthday" />
@@ -43,14 +43,14 @@
         <property name="MDepartment" type="java.lang.String">
             <column name="m_department" length="20" />
         </property>
-        <property name="MMajor" type="java.lang.String">
-            <column name="m_major" length="20" />
-        </property>
         <property name="MClass" type="java.lang.String">
             <column name="m_class" />
         </property>
-        <property name="MGrade" type="java.lang.String">
-            <column name="m_grade" length="10" />
+        <property name="MMajor" type="java.lang.String">
+            <column name="m_major" length="20" />
+        </property>
+        <property name="MGrade" type="java.lang.Integer">
+            <column name="m_grade" />
         </property>
         <property name="MEducationBackground" type="java.lang.String">
             <column name="m_educationBackground" />
@@ -67,14 +67,23 @@
         <property name="MAddress" type="java.lang.String">
             <column name="m_address" length="40" />
         </property>
-        <property name="MPostcode" type="java.lang.Short">
-            <column name="m_postcode" />
+        <property name="MPostcode" type="java.lang.String">
+            <column name="m_postcode" length="6" />
         </property>
         <property name="MPhoto" type="java.lang.String">
             <column name="m_photo" />
         </property>
-        <property name="MEducationSystem" type="java.lang.String">
+        <property name="MEducationSystem" type="java.lang.Integer">
             <column name="m_educationSystem" />
+        </property>
+        <property name="MEmail" type="java.lang.String">
+            <column name="m_email" />
+        </property>
+        <property name="MHomeAddress" type="java.lang.String">
+            <column name="m_homeAddress" />
+        </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="version" />
         </property>
     </class>
 </hibernate-mapping>

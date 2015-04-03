@@ -16,6 +16,7 @@ public class Department implements java.io.Serializable
 	private String DName;
 	private Short DAmount;
 	private String DDescription;
+	private Integer version;
 
 
 	// Constructors
@@ -32,11 +33,15 @@ public class Department implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Department(String DName, Short DAmount, String DDescription)
+	public Department(String DName,
+					  Short DAmount,
+					  String DDescription,
+					  Integer version)
 	{
 		this.DName = DName;
 		this.DAmount = DAmount;
 		this.DDescription = DDescription;
+		this.version = version;
 	}
 
 
@@ -80,6 +85,16 @@ public class Department implements java.io.Serializable
 	public void setDDescription(String DDescription)
 	{
 		this.DDescription = DDescription;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

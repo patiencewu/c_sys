@@ -16,6 +16,7 @@ public class Userpassword implements java.io.Serializable
 	private String upPassword;
 	private Integer upId;
 	private Short upPower;
+	private Integer version;
 
 
 	// Constructors
@@ -24,13 +25,30 @@ public class Userpassword implements java.io.Serializable
 	public Userpassword()
 	{}
 
-
-	/** full constructor */
-	public Userpassword(String upPassword, Integer upId, Short upPower)
+	/** minimal constructor */
+	public Userpassword(String upUser,
+						String upPassword,
+						Integer upId,
+						Short upPower)
 	{
+		this.upUser = upUser;
 		this.upPassword = upPassword;
 		this.upId = upId;
 		this.upPower = upPower;
+	}
+
+	/** full constructor */
+	public Userpassword(String upUser,
+						String upPassword,
+						Integer upId,
+						Short upPower,
+						Integer version)
+	{
+		this.upUser = upUser;
+		this.upPassword = upPassword;
+		this.upId = upId;
+		this.upPower = upPower;
+		this.version = version;
 	}
 
 
@@ -74,6 +92,16 @@ public class Userpassword implements java.io.Serializable
 	public void setUpPower(Short upPower)
 	{
 		this.upPower = upPower;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

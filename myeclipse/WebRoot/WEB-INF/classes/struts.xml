@@ -10,6 +10,9 @@
 	<constant name="struts.devMode" value="true"/>
 	
 	
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+	<constant name="struts.mapper.class" value="org.apache.struts2.dispatcher.mapper.DefaultActionMapper" />  
+	
 	<include file="struts-default.xml"/>
 
 	<package name="allaction" extends="struts-default">
@@ -18,13 +21,14 @@
 	<global-results>  
 	<result name="teamHead">/jsp/humanDepartment/peopleTeamManage/teamHead.html</result>
 	<result name="login">/jsp/humanDepartment/peopleTeamManage/login.jsp</result>
+	<result name="register">/jsp/humanDepartment/peopleTeamManage/register.jsp</result>
 	<result name="superManager">/jsp/humanDepartment/peopleTeamManage/superManager.html</result>
 	</global-results>
 	</package>
 	 
 	<package name="admin" extends="allaction">
-	<action name="Login" class="login">
-	</action>
+	<action name="Login" class="login"/>
+	<action name="Register_*" method="{1}" class="register"/>
 	</package>
 
 

@@ -14,11 +14,10 @@
 	                    http://www.springframework.org/schema/tx 
 	                    http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<!-- 开启注解处理器 -->
-	<context:annotation-config transaction-manager="transactionManager"/>
-	
+	<!-- 注释驱动器 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	<!-- 开启组建自动扫描，扫描的路径有base-package属性指定  -->
-	<context:component-scan base-package="/org.dao"/>
+	<context:component-scan base-package="org.dao" />
 	<context:component-scan base-package="org.dao.service"/>
 	<context:component-scan base-package="org.humanDepartment.humanSystem.action"/>
 	<context:component-scan base-package="org.humanDepartment.humanSystem.pojo"/>
@@ -62,7 +61,9 @@
 				<!-- hibernate4的事务管理的currentSession的配置 -->
 				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
 				<!-- 配置语言翻译包（用于hql中使用中文） -->
-				<prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactor</prop>
+				<prop key="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</prop>
+				<!-- 配置hibernate的乐观锁 -->
+				<prop key="hibernate.connection.isolation">2</prop>
 			</props>
 		</property>
 	</bean>
@@ -76,12 +77,13 @@
 	
 	<tx:advice id="baseServiceAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="get*" read-only="true" propagation="REQUIRED" rollback-for="Exception"/><!--之前是NOT_SUPPORT-->
+            <tx:method name="get*" read-only="true" propagation="REQUIRED"/><!--之前是NOT_SUPPORT-->
             <tx:method name="find*" read-only="true" propagation="REQUIRED"/><!--之前是NOT_SUPPORT-->
             <tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
             <!--默认其他方法都是REQUIRED-->
             <tx:method name="*" rollback-for="Exception"/>
         </tx:attributes>
@@ -98,7 +100,12 @@
 		abstract="false" lazy-init="default" autowire="default">
 		<property name="beanNames">
 			<list>
-				<value>userpasswordService</value>
+				<value>userpassworService</value>
+				<value>supermanagerService</value>
+				<value>departmentmanagerService</value>
+				<value>dapartmentemployeeService</value>
+				<value>membersService</value>
+				<value>teamService</value>
 			</list>
 		</property>
 		<!-- 这个属性为true时，表示被代理的是目标类本身而不是目标类的接口 -->
@@ -187,8 +194,9 @@
 	
 	
 	<bean id="login"
-		class="org.humanDepartment.humanSystem.action.Login" abstract="false"
+		class="org.humanDepartment.humanSystem.action.Login" abstract="false" scope="prototype"
 		lazy-init="default" autowire="default">
+		<property name="service" ref="userpasswordService"/>
 	</bean>
 
 
@@ -223,6 +231,47 @@
 		class="org.dao.service.UserpasswordServiceImpl" abstract="false"
 		lazy-init="default" autowire="default">
 		<property name="dao" ref="dao" />
-
 	</bean>
-	</beans>
+	<bean id="teamService" class="org.dao.service.TeamServiceImpl"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="dao" ref="dao" />
+	</bean>
+	<bean id="supermanagerService"
+		class="org.dao.service.SupermanagerServiceImpl" abstract="false"
+		lazy-init="default" autowire="default">
+		<property name="dao" ref="dao" />
+	</bean>
+	<bean id="membersService" class="org.dao.service.MembersServiceImpl"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="dao" ref="dao" />
+	</bean>
+	<bean id="departmentService"
+		class="org.dao.service.DepartmentServiceImpl" abstract="false"
+		lazy-init="default" autowire="default">
+		<property name="dao" ref="dao" />
+	</bean>
+	<bean id="departmentmanagerService"
+		class="org.dao.service.DepartmentmanagerServiceImpl" abstract="false"
+		lazy-init="default" autowire="default">
+		<property name="dao" ref="dao" />
+	</bean>
+	<bean id="departmentemployee"
+		class="org.humanDepartment.humanSystem.pojo.Departmentemployee"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	<bean id="departmentemployeeService"
+		class="org.dao.service.DepartmentemployeeServiceImpl" abstract="false"
+		lazy-init="default" autowire="default">
+		<property name="dao" ref="dao" />
+	</bean>
+	<bean id="register"
+		class="org.humanDepartment.humanSystem.action.Register"
+		abstract="false" lazy-init="default" autowire="default"
+		scope="prototype">
+		<property name="uService">
+			<ref bean="userpasswordService" />
+		</property>
+		<property name="mService">
+			<ref bean="membersService" />
+		</property>
+	</bean></beans>

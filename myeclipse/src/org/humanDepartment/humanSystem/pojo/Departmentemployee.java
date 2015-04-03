@@ -1,8 +1,6 @@
 
 package org.humanDepartment.humanSystem.pojo;
 
-import java.util.Date;
-
 
 /**
  * Departmentemployee entity. @author MyEclipse Persistence Tools
@@ -17,7 +15,7 @@ public class Departmentemployee implements java.io.Serializable
 	private Integer deId;
 	private String deName;
 	private String deSex;
-	private Date dmBirthday;
+	private String dmBirthday;
 	private String deLphone;
 	private String deSphone;
 	private String deEmail;
@@ -27,8 +25,9 @@ public class Departmentemployee implements java.io.Serializable
 	private String deCollege;
 	private String deMajor;
 	private String deClass;
-	private Short dePostcode;
-	private Boolean deDepartmentId;
+	private String dePostcode;
+	private Integer deDepartmentId;
+	private Integer version;
 
 
 	// Constructors
@@ -47,7 +46,7 @@ public class Departmentemployee implements java.io.Serializable
 	/** full constructor */
 	public Departmentemployee(String deName,
 							  String deSex,
-							  Date dmBirthday,
+							  String dmBirthday,
 							  String deLphone,
 							  String deSphone,
 							  String deEmail,
@@ -57,8 +56,9 @@ public class Departmentemployee implements java.io.Serializable
 							  String deCollege,
 							  String deMajor,
 							  String deClass,
-							  Short dePostcode,
-							  Boolean deDepartmentId)
+							  String dePostcode,
+							  Integer deDepartmentId,
+							  Integer version)
 	{
 		this.deName = deName;
 		this.deSex = deSex;
@@ -74,6 +74,7 @@ public class Departmentemployee implements java.io.Serializable
 		this.deClass = deClass;
 		this.dePostcode = dePostcode;
 		this.deDepartmentId = deDepartmentId;
+		this.version = version;
 	}
 
 
@@ -109,12 +110,12 @@ public class Departmentemployee implements java.io.Serializable
 		this.deSex = deSex;
 	}
 
-	public Date getDmBirthday()
+	public String getDmBirthday()
 	{
 		return this.dmBirthday;
 	}
 
-	public void setDmBirthday(Date dmBirthday)
+	public void setDmBirthday(String dmBirthday)
 	{
 		this.dmBirthday = dmBirthday;
 	}
@@ -209,24 +210,34 @@ public class Departmentemployee implements java.io.Serializable
 		this.deClass = deClass;
 	}
 
-	public Short getDePostcode()
+	public String getDePostcode()
 	{
 		return this.dePostcode;
 	}
 
-	public void setDePostcode(Short dePostcode)
+	public void setDePostcode(String dePostcode)
 	{
 		this.dePostcode = dePostcode;
 	}
 
-	public Boolean getDeDepartmentId()
+	public Integer getDeDepartmentId()
 	{
 		return this.deDepartmentId;
 	}
 
-	public void setDeDepartmentId(Boolean deDepartmentId)
+	public void setDeDepartmentId(Integer deDepartmentId)
 	{
 		this.deDepartmentId = deDepartmentId;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

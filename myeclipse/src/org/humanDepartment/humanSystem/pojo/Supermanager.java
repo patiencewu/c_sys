@@ -15,6 +15,7 @@ public class Supermanager implements java.io.Serializable
 	private Integer smId;
 	private String smName;
 	private String smLphone;
+	private Integer version;
 
 
 	// Constructors
@@ -25,10 +26,11 @@ public class Supermanager implements java.io.Serializable
 
 
 	/** full constructor */
-	public Supermanager(String smName, String smLphone)
+	public Supermanager(String smName, String smLphone, Integer version)
 	{
 		this.smName = smName;
 		this.smLphone = smLphone;
+		this.version = version;
 	}
 
 
@@ -62,6 +64,16 @@ public class Supermanager implements java.io.Serializable
 	public void setSmLphone(String smLphone)
 	{
 		this.smLphone = smLphone;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

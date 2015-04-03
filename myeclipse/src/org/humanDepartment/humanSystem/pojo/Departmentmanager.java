@@ -1,8 +1,6 @@
 
 package org.humanDepartment.humanSystem.pojo;
 
-import java.util.Date;
-
 
 /**
  * Departmentmanager entity. @author MyEclipse Persistence Tools
@@ -17,15 +15,16 @@ public class Departmentmanager implements java.io.Serializable
 	private Integer dmId;
 	private String dmName;
 	private String dmSex;
-	private Date dmBirthday;
+	private String dmBirthday;
 	private String dmLphone;
 	private String dmSphone;
 	private String dmEmail;
 	private String dmAddress;
 	private String dmOtherContactInformation;
 	private String dmPhoto;
-	private Short dmPostcode;
-	private Boolean dmDepartmentId;
+	private String dmPostcode;
+	private Integer dmDepartmentId;
+	private Integer version;
 
 
 	// Constructors
@@ -44,15 +43,16 @@ public class Departmentmanager implements java.io.Serializable
 	/** full constructor */
 	public Departmentmanager(String dmName,
 							 String dmSex,
-							 Date dmBirthday,
+							 String dmBirthday,
 							 String dmLphone,
 							 String dmSphone,
 							 String dmEmail,
 							 String dmAddress,
 							 String dmOtherContactInformation,
 							 String dmPhoto,
-							 Short dmPostcode,
-							 Boolean dmDepartmentId)
+							 String dmPostcode,
+							 Integer dmDepartmentId,
+							 Integer version)
 	{
 		this.dmName = dmName;
 		this.dmSex = dmSex;
@@ -65,6 +65,7 @@ public class Departmentmanager implements java.io.Serializable
 		this.dmPhoto = dmPhoto;
 		this.dmPostcode = dmPostcode;
 		this.dmDepartmentId = dmDepartmentId;
+		this.version = version;
 	}
 
 
@@ -100,12 +101,12 @@ public class Departmentmanager implements java.io.Serializable
 		this.dmSex = dmSex;
 	}
 
-	public Date getDmBirthday()
+	public String getDmBirthday()
 	{
 		return this.dmBirthday;
 	}
 
-	public void setDmBirthday(Date dmBirthday)
+	public void setDmBirthday(String dmBirthday)
 	{
 		this.dmBirthday = dmBirthday;
 	}
@@ -170,24 +171,34 @@ public class Departmentmanager implements java.io.Serializable
 		this.dmPhoto = dmPhoto;
 	}
 
-	public Short getDmPostcode()
+	public String getDmPostcode()
 	{
 		return this.dmPostcode;
 	}
 
-	public void setDmPostcode(Short dmPostcode)
+	public void setDmPostcode(String dmPostcode)
 	{
 		this.dmPostcode = dmPostcode;
 	}
 
-	public Boolean getDmDepartmentId()
+	public Integer getDmDepartmentId()
 	{
 		return this.dmDepartmentId;
 	}
 
-	public void setDmDepartmentId(Boolean dmDepartmentId)
+	public void setDmDepartmentId(Integer dmDepartmentId)
 	{
 		this.dmDepartmentId = dmDepartmentId;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

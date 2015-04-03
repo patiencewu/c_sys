@@ -14,9 +14,9 @@
             <column name="dm_name" length="10" not-null="true" />
         </property>
         <property name="dmSex" type="java.lang.String">
-            <column name="dm_sex" length="2" not-null="true" />
+            <column name="dm_sex" length="6" not-null="true" />
         </property>
-        <property name="dmBirthday" type="java.util.Date">
+        <property name="dmBirthday" type="java.lang.String">
             <column name="dm_birthday" length="10" />
         </property>
         <property name="dmLphone" type="java.lang.String">
@@ -37,11 +37,14 @@
         <property name="dmPhoto" type="java.lang.String">
             <column name="dm_photo" />
         </property>
-        <property name="dmPostcode" type="java.lang.Short">
-            <column name="dm_postcode" />
+        <property name="dmPostcode" type="java.lang.String">
+            <column name="dm_postcode" length="6" />
         </property>
-        <property name="dmDepartmentId" type="java.lang.Boolean">
+        <property name="dmDepartmentId" type="java.lang.Integer">
             <column name="dm_departmentId" />
+        </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="version" />
         </property>
     </class>
 </hibernate-mapping>

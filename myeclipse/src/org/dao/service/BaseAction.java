@@ -1,6 +1,5 @@
 package org.dao.service;
 
-import java.util.List;
 import java.util.Map;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +13,26 @@ public class BaseAction extends ActionSupport implements
 											 SessionAware,
 											 ServletContextAware
 {
+	
+//	
+//	
+//	/*以下是实例即使用方法*/
+//	/*依赖注入数据库访问DAO*/
+//	private UserpasswordService service;
+//	
+//	/*此方法可有可无*/
+//	public UserpasswordService getService()
+//	{
+//		return service;
+//	}
+//
+//	/*依赖注入所set需要的方法*/
+//	public void setService(UserpasswordService service)
+//	{
+//		this.service = service;
+//	}
+//
+//	
 
 	protected HttpServletRequest request;
 	protected Map session;

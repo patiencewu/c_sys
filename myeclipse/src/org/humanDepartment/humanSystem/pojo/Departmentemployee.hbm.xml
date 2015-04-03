@@ -14,9 +14,9 @@
             <column name="de_name" length="10" not-null="true" />
         </property>
         <property name="deSex" type="java.lang.String">
-            <column name="de_sex" length="2" not-null="true" />
+            <column name="de_sex" length="6" not-null="true" />
         </property>
-        <property name="dmBirthday" type="java.util.Date">
+        <property name="dmBirthday" type="java.lang.String">
             <column name="dm_birthday" length="10" />
         </property>
         <property name="deLphone" type="java.lang.String">
@@ -46,11 +46,14 @@
         <property name="deClass" type="java.lang.String">
             <column name="de_class" />
         </property>
-        <property name="dePostcode" type="java.lang.Short">
-            <column name="de_postcode" />
+        <property name="dePostcode" type="java.lang.String">
+            <column name="de_postcode" length="6" />
         </property>
-        <property name="deDepartmentId" type="java.lang.Boolean">
+        <property name="deDepartmentId" type="java.lang.Integer">
             <column name="de_departmentId" />
+        </property>
+        <property name="version" type="java.lang.Integer">
+            <column name="version" />
         </property>
     </class>
 </hibernate-mapping>

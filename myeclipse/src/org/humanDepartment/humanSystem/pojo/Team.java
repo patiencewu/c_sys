@@ -1,8 +1,6 @@
 
 package org.humanDepartment.humanSystem.pojo;
 
-import java.util.Date;
-
 
 /**
  * Team entity. @author MyEclipse Persistence Tools
@@ -19,9 +17,10 @@ public class Team implements java.io.Serializable
 	private Short TAmount;
 	private String TDescription;
 	private String TTeacher;
-	private Date TSetUp;
+	private String TSetUpTime;
 	private String TStatus;
 	private Integer TLeaderId;
+	private Integer version;
 
 
 	// Constructors
@@ -33,13 +32,13 @@ public class Team implements java.io.Serializable
 	/** minimal constructor */
 	public Team(String TName,
 				Short TAmount,
-				Date TSetUp,
+				String TSetUpTime,
 				String TStatus,
 				Integer TLeaderId)
 	{
 		this.TName = TName;
 		this.TAmount = TAmount;
-		this.TSetUp = TSetUp;
+		this.TSetUpTime = TSetUpTime;
 		this.TStatus = TStatus;
 		this.TLeaderId = TLeaderId;
 	}
@@ -49,17 +48,19 @@ public class Team implements java.io.Serializable
 				Short TAmount,
 				String TDescription,
 				String TTeacher,
-				Date TSetUp,
+				String TSetUpTime,
 				String TStatus,
-				Integer TLeaderId)
+				Integer TLeaderId,
+				Integer version)
 	{
 		this.TName = TName;
 		this.TAmount = TAmount;
 		this.TDescription = TDescription;
 		this.TTeacher = TTeacher;
-		this.TSetUp = TSetUp;
+		this.TSetUpTime = TSetUpTime;
 		this.TStatus = TStatus;
 		this.TLeaderId = TLeaderId;
+		this.version = version;
 	}
 
 
@@ -115,14 +116,14 @@ public class Team implements java.io.Serializable
 		this.TTeacher = TTeacher;
 	}
 
-	public Date getTSetUp()
+	public String getTSetUpTime()
 	{
-		return this.TSetUp;
+		return this.TSetUpTime;
 	}
 
-	public void setTSetUp(Date TSetUp)
+	public void setTSetUpTime(String TSetUpTime)
 	{
-		this.TSetUp = TSetUp;
+		this.TSetUpTime = TSetUpTime;
 	}
 
 	public String getTStatus()
@@ -143,6 +144,16 @@ public class Team implements java.io.Serializable
 	public void setTLeaderId(Integer TLeaderId)
 	{
 		this.TLeaderId = TLeaderId;
+	}
+
+	public Integer getVersion()
+	{
+		return this.version;
+	}
+
+	public void setVersion(Integer version)
+	{
+		this.version = version;
 	}
 
 

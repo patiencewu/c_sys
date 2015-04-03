@@ -49,8 +49,8 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
 	this.entityClass = entityClass;
 }
 
-public String entityName;
-
+//private String entityName;
+//
 //   public void setEntityClass(Class clazz){
 //	   this.entityClass = clazz;
 //   }
