@@ -2,9 +2,9 @@ package org.humanDepartment.humanSystem.action;
 
 import java.sql.Date;
 import java.util.Map;
-import org.dao.service.BaseAction;
-import org.dao.service.MembersService;
-import org.dao.service.UserpasswordService;
+import org.BaseAction;
+import org.dao.service.interf.MembersService;
+import org.dao.service.interf.UserpasswordService;
 import org.humanDepartment.humanSystem.pojo.Members;
 import org.humanDepartment.humanSystem.pojo.Userpassword;
 import org.model.SpringUtil;

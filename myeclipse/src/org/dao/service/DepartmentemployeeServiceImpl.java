@@ -2,6 +2,7 @@ package org.dao.service;
 
 import org.dao.BaseDao;
 import org.dao.PageResults;
+import org.dao.service.interf.DepartmentemployeeService;
 import org.humanDepartment.humanSystem.pojo.Department;
 import org.humanDepartment.humanSystem.pojo.Departmentemployee;
 

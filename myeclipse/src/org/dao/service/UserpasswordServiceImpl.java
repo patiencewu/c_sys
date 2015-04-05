@@ -3,6 +3,7 @@ package org.dao.service;
 import java.util.List;
 import org.dao.BaseDao;
 import org.dao.PageResults;
+import org.dao.service.interf.UserpasswordService;
 import org.humanDepartment.humanSystem.pojo.Members;
 import org.humanDepartment.humanSystem.pojo.Userpassword;
 
@@ -40,7 +41,7 @@ public class UserpasswordServiceImpl implements UserpasswordService
 	 */
 	public void setDao(BaseDao<Userpassword, String> dao)
 	{
-		this.dao = dao;
+		this.dao = (BaseDao<Userpassword, String>)dao;
 		this.dao.setEntityClass(Userpassword.class);
 	}
 	
@@ -57,24 +58,11 @@ public class UserpasswordServiceImpl implements UserpasswordService
 	@Override
 	public void delUserById(String userName)
 	{
-			dao.deleteById(userName);
+		Userpassword u;
+		u = (Userpassword) dao.getSession().get(Userpassword.class, userName);
+		dao.delete(u);
 	}
 
-	@Override
-	public boolean changePassword(String userName,
-								  String oldPassword,
-								  String newPassword)
-	{
-		Userpassword user;
-		user = dao.get(userName);
-		if(user != null){
-			if(user.getUpPassword().equals(oldPassword))
-				user.setUpPassword(newPassword);
-			return true;
-		}
-		return false;
-
-	}
 
 	@Override
 	public Userpassword findLoginUser(String userName, String password)
@@ -88,14 +76,16 @@ public class UserpasswordServiceImpl implements UserpasswordService
 	public PageResults<Userpassword> findAllUserInPage(String hql, String countHql, int pageNo, int pageSize, Object... values)
 	{
 		if(hql == null)
-			hql = "from Userpassword as a";
+			hql = "from Userpassword as a order by a.upId asc";
 		return dao.findPageByFetchedHql(hql, countHql, pageNo, pageSize, values);
 	}
 
 	@Override
 	public Userpassword findUserById(String userName)
 	{
-		return dao.get(userName);
+		return (Userpassword) dao.getSession().get(Userpassword.class, userName);
+		
+//		return dao.get(userName);
 	}
 
 	@Override
@@ -105,4 +95,24 @@ public class UserpasswordServiceImpl implements UserpasswordService
 		
 	}
 
+	@Override
+	public Userpassword findByPersonId(int power, int id)
+	{
+		return dao.getByHQL("from Userpassword as a where a.upPower = "+String.valueOf(power) + " and a.upId = " + String.valueOf(id));
+	}
+
+	@Override
+	public boolean changePassword(int power, int personId,
+								  String oldPassword,
+								  String newPassword)
+	{
+		Userpassword user = findByPersonId(power, personId);
+		if(user != null){
+			if(user.getUpPassword().equals(oldPassword))
+				user.setUpPassword(newPassword);
+			return true;
+		}
+		return false;
+	}
+	
 }

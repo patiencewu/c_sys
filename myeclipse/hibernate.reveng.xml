@@ -2,9 +2,11 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-<table name="userpassword" catalog="c_sys">
-	<primary-key>
-		<generator class="assigned"></generator>
-	</primary-key>
-</table>
+	<table name="userpassword" catalog="c_sys">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="supermanager" catalog="c_sys" class="Supermanager"></table>
+	<table name="departmentemployee" catalog="c_sys" class="Departmentemployee"></table>
 </hibernate-reverse-engineering>

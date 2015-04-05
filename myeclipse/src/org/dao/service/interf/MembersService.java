@@ -1,4 +1,4 @@
-package org.dao.service;
+package org.dao.service.interf;
 
 import org.dao.PageResults;
 import org.humanDepartment.humanSystem.pojo.Members;

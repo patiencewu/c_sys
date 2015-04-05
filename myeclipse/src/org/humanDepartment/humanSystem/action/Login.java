@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Map;
 import javax.servlet.ServletContext;
 import  javax.servlet.http.HttpServletRequest;
+import org.BaseAction;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.apache.struts2.util.ServletContextAware;
 import org.dao.BaseDao;
 import org.dao.PageResults;
-import org.dao.service.BaseAction;
-import org.dao.service.DepartmentemployeeService;
-import org.dao.service.DepartmentmanagerService;
-import org.dao.service.MembersService;
-import org.dao.service.SupermanagerService;
-import org.dao.service.UserpasswordService;
+import org.dao.service.interf.DepartmentemployeeService;
+import org.dao.service.interf.DepartmentmanagerService;
+import org.dao.service.interf.MembersService;
+import org.dao.service.interf.SupermanagerService;
+import org.dao.service.interf.UserpasswordService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.humanDepartment.humanSystem.pojo.Departmentemployee;
 import org.humanDepartment.humanSystem.pojo.Departmentmanager;
@@ -101,14 +101,17 @@ public class Login extends BaseAction
 		DepartmentmanagerService dmService;
 		DepartmentemployeeService deService;
 		MembersService mService;
+		
 		user = service.findLoginUser(userName, password);
 		if(user == null) return "login";
+		int id = user.getUpId();
+		session.put("id", id);
 		switch(user.getUpPower()){
 			case 1:
 				smService = (SupermanagerService) SpringUtil.getBean("supermanagerService");
-				superManager = smService.findId(user.getUpId());
-				dmService = (DepartmentmanagerService) SpringUtil.getBean("departmentmanagerService");
-				pageResults = dmService.findAPage(null, null, 0, 10);
+				superManager = smService.findId(id);
+				session.put("name", superManager.getSmName());
+				session.put("id", superManager.getSmId());
 				this.message = "µÇÂ½³É¹¦";
 				return "superManager";
 			case 2:

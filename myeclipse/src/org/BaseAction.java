@@ -1,4 +1,4 @@
-package org.dao.service;
+package org;
 
 import java.util.Map;
 import javax.servlet.ServletContext;

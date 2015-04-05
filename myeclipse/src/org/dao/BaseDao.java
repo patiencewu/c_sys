@@ -95,7 +95,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    @Override
    public T load(ID id) {
 	   if(this.entityClass != null){
-       T load = (T) this.getQrySession().load(getEntityClass(), id);
+       T load = (T) this.getSession().load(getEntityClass(), id);
        return load;
 	   }
 	   else System.out.println("entityName字段为空，未知道的数据库实体");
@@ -112,7 +112,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    @Override
    public T get(ID id) {
 	   if(this.entityClass != null){
-	       T load = (T) this.getQrySession().get(getEntityClass(), id);
+	       T load = (T) this.getSession().get(getEntityClass(), id);
 	       return load;
 		   }
 		   else System.out.println("entityName字段为空，未知道的数据库实体");
@@ -449,14 +449,14 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
        return sessionFactory.getCurrentSession();
    }
    
-   /**
-    * 
-    * @return session
-    */
-   public Session getQrySession() {
-       //需要开启事物，才能得到CurrentSession
-       return sessionFactory.openSession();
-   }
+//   /**
+//    * 通过openSession得到session
+//    * @return session
+//    */
+//   public Session getOpenSession() {
+//       //需要开启事物，才能得到CurrentSession
+//       return sessionFactory.openSession();
+//   }
     
    /**
     * 

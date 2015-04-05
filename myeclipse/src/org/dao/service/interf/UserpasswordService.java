@@ -1,4 +1,4 @@
-package org.dao.service;
+package org.dao.service.interf;
 
 import java.io.Serializable;
 import java.util.List;
@@ -29,12 +29,13 @@ public interface UserpasswordService
 	
 	/**修改密码
 	 * 返回是否更新成功
-	 * @param userName 账号
+	 * @param power 账号等级
+	 * @param personId 账号的人所在表的id
 	 * @param oldPassword 旧密码
 	 * @param newPassword 新密码
 	 * @return 是否修改成功
 	 */
-	public boolean changePassword(String userName, String oldPassword, String newPassword);
+	public boolean changePassword(int power, int personId, String oldPassword, String newPassword);
 	
 	/**单个账号密码查询
 	 * 返回一个登陆的账号密码实体
@@ -61,5 +62,10 @@ public interface UserpasswordService
 	 * @return
 	 */
 	public Userpassword findUserById(String userName);
+	
+
+	public Userpassword findByPersonId(int power, int id);
+	
+
 	
 }

@@ -5,7 +5,7 @@
 <head>
 <!-- meta http-equiv="Content-Type" content="text/html; charset=utf-8" / -->
 <title>登陆 - 华南农业大学学生创业基地</title>
-<link rel="stylesheet" type="text/css" href="css/login.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/login.css"/>
 </head>
 <body class="body">
 
@@ -20,30 +20,30 @@ function checkUser(){
 }
 </script>
 
-  <div><img src="images/images/log_01.jpg" width="1366" height="264" /></div>
-  <div><img src="images/images/log_02.jpg" class="p1"/></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_01.jpg" width="1366" height="264" /></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_02.jpg" class="p1"/></div>
   
   <form id="logForm" action="Login.action" method="post">
   <div class="account">
     <input id="userName" name="userName" type="text" style="width:339px; height:29px; border: 0px; font-size: 18px; vertical-align: middle;" />
   </div>
-  <div><img src="images/images/log_04.jpg" width="269" height="30" /></div>
-  <div><img src="images/images/log_05.jpg" width="1366" height="19" /></div>
-  <div><img src="images/images/log_06.jpg" class="p2"/></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_04.jpg" width="269" height="30" /></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_05.jpg" width="1366" height="19" /></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_06.jpg" class="p2"/></div>
   <div class="key">
     <input id="password" name="password" type="password" style="width:339px; height:29px; border: 0px; font-size: 30px; vertical-align:middle;" maxlength="16"/>
   </div>
-  <div><img src="images/images/log_08.jpg" width="269" height="31" /></div>
-  <div><img src="images/images/log_09.jpg" width="1366" height="23" /></div>
-  <div class="p3"><img src="images/images/log_10.jpg" /></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_08.jpg" width="269" height="31" /></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_09.jpg" width="1366" height="23" /></div>
+  <div class="p3"><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_10.jpg" /></div>
   
-  <div class="logButton"><input type="image" src="images/images/log_11.jpg" onclick="javascript:checkUser()"></input></div>
+  <div class="logButton"><input type="image" src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_11.jpg" onclick="javascript:checkUser()"></input></div>
   </form>
-  <div class="p4"><img src="images/images/log_12.jpg" /></div>
-  <div class="forgetButton"><a href="#"><img src="images/images/log_13.jpg" /></a></div>
-  <div class="p5"><img src="images/images/log_14.jpg" /></div>
-  <div class="newButton"><s:a action="Register_goToRegister"><img src="images/images/log_15.jpg" /></s:a></div>
-  <div><img src="images/images/log_16.jpg" width="269" height="46" /></div>
-  <div><img src="images/images/log_17.jpg" width="1366" height="227" /></div>
+  <div class="p4"><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_12.jpg" /></div>
+  <div class="forgetButton"><a href="#"><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_13.jpg" /></a></div>
+  <div class="p5"><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_14.jpg" /></div>
+  <div class="newButton"><s:a action="Register_goToRegister"><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_15.jpg" /></s:a></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_16.jpg" width="269" height="46" /></div>
+  <div><img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/log_17.jpg" width="1366" height="227" /></div>
 </body>
 </html>

@@ -3,6 +3,7 @@ package org.dao.service;
 import java.io.Serializable;
 import org.dao.BaseDao;
 import org.dao.PageResults;
+import org.dao.service.interf.TeamService;
 import org.humanDepartment.humanSystem.pojo.Team;
 
 public class TeamServiceImpl implements TeamService
@@ -32,7 +33,7 @@ public class TeamServiceImpl implements TeamService
 	 */
 	public void setDao(BaseDao<Team, Integer> dao)
 	{
-		this.dao = dao;
+		this.dao = (BaseDao<Team, Integer>)dao;
 		this.dao.setEntityClass(Team.class);
 	}
 	

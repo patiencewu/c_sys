@@ -57,7 +57,7 @@
 					org.hibernate.dialect.MySQLDialect
 				</prop>
 				<!-- 设置在控制台输出SQL语句 -->
-				<prop key="show_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
 				<!-- hibernate4的事务管理的currentSession的配置 -->
 				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
 				<!-- 配置语言翻译包（用于hql中使用中文） -->
@@ -77,8 +77,9 @@
 	
 	<tx:advice id="baseServiceAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="get*" read-only="true" propagation="REQUIRED"/><!--之前是NOT_SUPPORT-->
-            <tx:method name="find*" read-only="true" propagation="REQUIRED"/><!--之前是NOT_SUPPORT-->
+            <tx:method name="get*" read-only="true" propagation="REQUIRED" rollback-for="Exception"/><!--之前是NOT_SUPPORT-->
+            <tx:method name="find*" read-only="true" propagation="REQUIRED" rollback-for="Exception"/><!--之前是NOT_SUPPORT-->
+            <tx:method name="load*" read-only="true" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception"/>
@@ -238,7 +239,7 @@
 	</bean>
 	<bean id="supermanagerService"
 		class="org.dao.service.SupermanagerServiceImpl" abstract="false"
-		lazy-init="default" autowire="default">
+		lazy-init="default" autowire="default" scope="prototype">
 		<property name="dao" ref="dao" />
 	</bean>
 	<bean id="membersService" class="org.dao.service.MembersServiceImpl"
@@ -257,11 +258,12 @@
 	</bean>
 	<bean id="departmentemployee"
 		class="org.humanDepartment.humanSystem.pojo.Departmentemployee"
-		abstract="false" lazy-init="default" autowire="default">
+		abstract="false" lazy-init="default" autowire="default"
+		scope="prototype">
 	</bean>
 	<bean id="departmentemployeeService"
 		class="org.dao.service.DepartmentemployeeServiceImpl" abstract="false"
-		lazy-init="default" autowire="default">
+		lazy-init="default" autowire="default" scope="prototype">
 		<property name="dao" ref="dao" />
 	</bean>
 	<bean id="register"

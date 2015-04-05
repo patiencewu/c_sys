@@ -2,6 +2,7 @@ package org.dao.service;
 
 import org.dao.BaseDao;
 import org.dao.PageResults;
+import org.dao.service.interf.DepartmentmanagerService;
 import org.humanDepartment.humanSystem.pojo.Departmentmanager;
 
 public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
@@ -35,7 +36,6 @@ public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 		this.dao =  (BaseDao<Departmentmanager, Integer>) dao;
 		this.dao.setEntityClass(Departmentmanager.class);
 	}
-	
 	
 	
 	@Override
@@ -72,8 +72,15 @@ public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 													Object... values)
 	{
 		if(hql == null)
-			hql = "from Departmentmanager as a";
+			hql = "from Departmentmanager as a order by a.dmId asc";
 		return dao.findPageByFetchedHql(hql, countHql, pageNo, pageSize, values);
+	}
+
+	@Override
+	public void deleteById(int id)
+	{
+		dao.deleteById(id);
+		
 	}
 
 }

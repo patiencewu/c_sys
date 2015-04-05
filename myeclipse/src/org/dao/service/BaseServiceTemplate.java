@@ -31,5 +31,19 @@ public class BaseServiceTemplate<HibernateEntity extends Serializable>
 		dao.get(id);
 		return null;
 	}
+	
+	/**
+	 * 请覆盖该方法
+	 * @param hql 查询语句hql
+	 * @param countHql 查询记录数的hql
+	 * @param pageNo 页码（第几页）
+	 * @param pageSize 页面的记录条数
+	 * @param values 用来保存呢数据的变量参数
+	 * @return 对应的分页
+	 */
+	public PageResults<HibernateEntity> findInPage(String hql, String countHql, int pageNo, int pageSize, Object... values){
+		return null;
+		
+	}
 
 }

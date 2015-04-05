@@ -2,6 +2,7 @@ package org.dao.service;
 
 import org.dao.BaseDao;
 import org.dao.PageResults;
+import org.dao.service.interf.DepartmentService;
 import org.humanDepartment.humanSystem.pojo.Department;
 
 public class DepartmentServiceImpl implements DepartmentService
@@ -56,6 +57,10 @@ public class DepartmentServiceImpl implements DepartmentService
 
 	}
 
+	public void delById(int id){
+		dao.deleteById(id);
+	}
+	
 	@Override
 	public Department findById(int id)
 	{

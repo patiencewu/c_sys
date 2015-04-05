@@ -3,6 +3,7 @@ package org.dao.service;
 import java.io.Serializable;
 import org.dao.BaseDao;
 import org.dao.PageResults;
+import org.dao.service.interf.MembersService;
 import org.humanDepartment.humanSystem.pojo.Members;
 public class MembersServiceImpl implements MembersService
 {
