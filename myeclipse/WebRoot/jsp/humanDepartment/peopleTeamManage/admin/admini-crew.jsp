@@ -24,7 +24,7 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="administrator.jsp">
+					<a class="navbar-brand" href="SupToDM_goToSuperManagerP.action">
 						<img alt="Brand" src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/img/未标题-1.png">
 					</a>
 					<p class="navbar-text">华南农业大学创创业学院<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您：<s:property value="#session.name"/></small>
@@ -36,7 +36,7 @@
 			</div>
 		</nav>
 		<ol class="breadcrumb" style="padding-left: 100px;">
-			<li><a href="administrator.jsp">首页</a>
+			<li><a href="SupToDM_goToSuperManagerP.action">首页</a>
 			</li>
 			<li class="active">人员管理</li>
 		</ol>
@@ -71,8 +71,7 @@
 								<td><s:property value="dmSphone"/></td>
 								<td><s:property value="dmEmail"/></td>
 								<td><s:property value="dmAddress"/></td>
-								<td><a href='SupToDM_deleteDM.action?userName=<s:property value="pageResults1.results[#stuts.index].upUser"/>'>注销</a>
-								</td>
+								<td><a href='SupToDM_deleteDM.action?userName=<s:property value="pageResults1.results[#stuts.index].upUser"/>'>注销</a></td>
 							</tr>
 							</s:iterator>
 							<s:iterator value="pageResults2.results">
@@ -86,8 +85,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td><s:a action="SupToDM_deleteDM?userName=<s:property value='upUser'/>">注销</s:a>
-								</td>
+								<td><a href='SupToDM_deleteDM.action?userName=<s:property value="upUser"/>'>注销</a></td>
 							</tr>
 				
 							</s:iterator>
@@ -123,7 +121,7 @@
 				<!--end主面板-->
 			</div>
 		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/js/bootstrap.min.js"></script>
 	</body>
 
 </html>

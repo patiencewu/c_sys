@@ -15,7 +15,6 @@ import org.model.SpringUtil;
 
 public class SuperMangerToDepartmentManager extends BaseAction
 {
-//TODO 超级管理员对部长的操作包括：增删改查
 	
 
 	private String userName;
@@ -29,13 +28,13 @@ public class SuperMangerToDepartmentManager extends BaseAction
 	private PageResults pageResults2;
 	private PageResults<Userpassword> pageResults1;
 
-	
+
+//	添加相关部门的部长（DepartmentManager）
 	public String addNewDM(){
 		int ran = (int)(10000+Math.random()*(80000));
 		UserpasswordService uService = (UserpasswordService) SpringUtil.getBean("userpasswordService");
 		Userpassword user = (Userpassword) SpringUtil.getBean("userPassword");
 		newDM = String.valueOf(ran);
-		System.out.println(newDM);
 		user.setUpUser(newDM);
 		user.setUpPassword(newDM);
 		user.setUpPower(Short.valueOf(dmPower));
@@ -45,6 +44,7 @@ public class SuperMangerToDepartmentManager extends BaseAction
 		return "addSuccess";
 	}
 
+//	删除对应账号的部长
 	public String deleteDM(){
 		UserpasswordService uService = (UserpasswordService) SpringUtil.getBean("userpasswordService");
 		Userpassword u =  uService.findUserById(userName);
@@ -60,14 +60,17 @@ public class SuperMangerToDepartmentManager extends BaseAction
 		return goToManageDM();
 	}
 	
+//	前往添加页面
 	public String goToAdd(){
 		return "toAddDM";
 	}
 	
+//	前往密码修改页面
 	public String goToChangePassword(){
 		return "toChangePassword";
 	}
 	
+//	前往人员管理页面，同时查询相关的人员（部长）
 	public String goToManageDM(){
 		DepartmentmanagerService dmService = (DepartmentmanagerService) SpringUtil.getBean("departmentmanagerService");
 		UserpasswordService uService = (UserpasswordService) SpringUtil.getBean("userpasswordService");
@@ -81,6 +84,7 @@ public class SuperMangerToDepartmentManager extends BaseAction
 		return "manageDM";
 	}
 	
+//	修改对应的密码
 	public String changePassword(){
 		if(!newPassword.equals(confirmPassword)) return "changeError";
 		SupermanagerService service = (SupermanagerService) SpringUtil.getBean("supermanagerService");
@@ -90,11 +94,12 @@ public class SuperMangerToDepartmentManager extends BaseAction
 		return "superManager";
 	}
 	
+//	前往超管首页
 	public String goToSuperManagerP(){
 		return "superManager";
 	}
 	
-
+//	以下是getter和setter
 	public String getMessage()
 	{
 		return message;

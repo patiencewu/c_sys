@@ -3,7 +3,9 @@ package org.dao.service;
 import org.dao.BaseDao;
 import org.dao.PageResults;
 import org.dao.service.interf.DepartmentmanagerService;
+import org.dao.service.interf.UserpasswordService;
 import org.humanDepartment.humanSystem.pojo.Departmentmanager;
+import org.model.SpringUtil;
 
 public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 {
@@ -83,4 +85,11 @@ public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 		
 	}
 
+	@Override
+	public boolean changePassword(int id, String oldPassword, String newPassword)
+	{
+		UserpasswordService service = (UserpasswordService) SpringUtil.getBean("userpasswordService");
+		return service.changePassword(2, id, oldPassword, newPassword);
+	}
+	
 }

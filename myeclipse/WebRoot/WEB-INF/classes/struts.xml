@@ -19,10 +19,11 @@
 	
 	<!-- 全局的 -->
 	<global-results>  
-	<result name="teamHead">/jsp/humanDepartment/peopleTeamManage/teamHead.html</result>
+	<result name="teamHead">/jsp/humanDepartment/peopleTeamManage/teacher/teamHead.html</result>
 	<result name="login">/jsp/humanDepartment/peopleTeamManage/login.jsp</result>
-	<result name="register">/jsp/humanDepartment/peopleTeamManage/register.jsp</result>
+	<result name="register">/jsp/humanDepartment/peopleTeamManage/Registration.jsp</result>
 	<result name="superManager">/jsp/humanDepartment/peopleTeamManage/admin/administrator.jsp</result>
+	<result name="teacherHome">/jsp/humanDepartment/peopleTeamManage/teacher/ad-home.jsp</result>
 	</global-results>
 	</package>
 	 
@@ -34,6 +35,13 @@
 		<result name="manageDM">/jsp/humanDepartment/peopleTeamManage/admin/admini-crew.jsp</result>
 		<result name="toChangePassword">jsp/humanDepartment/peopleTeamManage/admin/admini-Security.jsp</result>
 		<result name="addSuccess">jsp/humanDepartment/peopleTeamManage/admin/add.jsp</result>
+	</action>
+	<action name="DMTE_*" method="{1}" class="departmentManagerToEmployee">
+		<result name="manageDE">/jsp/humanDepartment/peopleTeamManage/teacher/manageEmployee.jsp</result>
+	</action>
+	<action name="DToM_*" method="{1}" class="departmentToMember">
+		<result name="manageMembers">/jsp/humanDepartment/peopleTeamManage/teacher/personal-management.jsp</result>
+		<result name="memberDetail">/jsp/humanDepartment/peopleTeamManage/teacher/detail.jsp</result>
 	</action>
 	</package>
 

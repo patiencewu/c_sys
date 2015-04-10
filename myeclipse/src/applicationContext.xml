@@ -182,11 +182,12 @@
 	
 	<bean id="departmentToMember"
 		class="org.humanDepartment.humanSystem.action.DepartmentToMember"
-		abstract="false" lazy-init="default" autowire="default">
+		abstract="false" lazy-init="default" autowire="default"
+		scope="prototype">
 	</bean>
-	
-	
-	
+
+
+
 	<bean id="departmentToTeam"
 		class="org.humanDepartment.humanSystem.action.DepartmentToTeam"
 		abstract="false" lazy-init="default" autowire="default">

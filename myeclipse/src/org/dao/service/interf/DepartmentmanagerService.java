@@ -6,4 +6,6 @@ public interface DepartmentmanagerService extends BaseService<Departmentmanager>
 {
 //TODO 增删改查 Departmentmanager表
 	public void deleteById(int id);
+
+	boolean changePassword(int id, String oldPassword, String newPassword);
 }

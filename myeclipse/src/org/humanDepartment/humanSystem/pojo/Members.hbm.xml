@@ -26,10 +26,10 @@
             <column name="m_birthday" />
         </property>
         <property name="MNation" type="java.lang.String">
-            <column name="m_nation" not-null="true" />
+            <column name="m_nation" not-null="false" />
         </property>
         <property name="MNativePlace" type="java.lang.String">
-            <column name="m_nativePlace" not-null="true" />
+            <column name="m_nativePlace" not-null="false" />
         </property>
         <property name="MPliticsStatus" type="java.lang.String">
             <column name="m_pliticsStatus" />

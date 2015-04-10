@@ -95,7 +95,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    @Override
    public T load(ID id) {
 	   if(this.entityClass != null){
-       T load = (T) this.getSession().load(getEntityClass(), id);
+       T load = (T) this.getSession().load(getEntityClass(), id); System.out.println("找到实体" + load);
        return load;
 	   }
 	   else System.out.println("entityName字段为空，未知道的数据库实体");
@@ -112,7 +112,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    @Override
    public T get(ID id) {
 	   if(this.entityClass != null){
-	       T load = (T) this.getSession().get(getEntityClass(), id);
+	       T load = (T) this.getSession().get(getEntityClass(), id); System.out.println("找到实体" + load);
 	       return load;
 		   }
 		   else System.out.println("entityName字段为空，未知道的数据库实体");

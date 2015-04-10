@@ -21,10 +21,12 @@
 	</head>
 		<script type="text/javascript">
 			function opennew() {
-				//				var openUrl="logoin.jsp"; //弹出窗口的url
-				var us=document.getElementByName("userName").value;
-				if(us==""){alert("请选择部门");return false;}
-				else return true;
+				//				var openUrl="logoin.html"; //弹出窗口的url
+				var iWidth = 800; //弹出窗口的宽度;
+				var iHeight = 300; //弹出窗口的高度;
+				var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+				var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
+				window.open("http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/add.jsp", "", "height=" + iHeight + ", width=" + iWidth + ", top=" + iTop + ", left=" + iLeft).close();
 			}
 		</script>
 
@@ -33,7 +35,7 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="administrator.jsp">
+					<a class="navbar-brand" href="SupToDM_goToSuperManagerP.action">
 						<img alt="Brand" src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/img/未标题-1.png">
 					</a>
 					<p class="navbar-text">华南农业大学创创业学院<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您：<s:property value="#session.name"/></small>
@@ -45,7 +47,7 @@
 			</div>
 		</nav>
 		<ol class="breadcrumb" style="padding-left: 100px;">
-			<li><a href="administrator.jsp">首页</a>
+			<li><a href="SupToDM_goToSuperManagerP.action">首页</a>
 			</li>
 			<li class="active">添加账号</li>
 		</ol>

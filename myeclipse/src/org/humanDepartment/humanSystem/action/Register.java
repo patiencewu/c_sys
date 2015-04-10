@@ -58,7 +58,7 @@ public class Register extends BaseAction
 		member.setMCollege(college);
 		member.setMDepartment(department);
 		member.setMEducationBackground(educationBackground);
-		member.setMEducationSystem(Integer.valueOf(educationSystem));
+//		member.setMEducationSystem(Integer.valueOf(educationSystem));
 		member.setMEmail(email);
 		member.setMGrade(Integer.valueOf(grade));
 		member.setMHomeAddress(homeaddress);
@@ -75,12 +75,12 @@ public class Register extends BaseAction
 		member.setMSex(sex);
 		member.setMSphone(sphone);
 		member.setMStudentNumber(studentNumber);
-		if(this.school != null || !this.school.equals("")) member.setMStudents(true);
-		else member.setMStudents(false);
+//		if(this.school != null || !this.school.equals("")) member.setMStudents(true);
+//		else member.setMStudents(false);
 		
 		int id = mService.add(member);
 		
-		user = (Userpassword) SpringUtil.getBean("userpassword");
+		user = (Userpassword) SpringUtil.getBean("userPassword");
 		user.setUpUser(userName);
 		user.setUpPower((short) 4);
 		user.setUpPassword(password);

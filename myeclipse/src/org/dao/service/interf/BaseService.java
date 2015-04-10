@@ -48,11 +48,13 @@ public interface BaseService<Entity extends Serializable>
 	 * @return
 	 */
 	public int add(Entity entity);
+	
 	/**
 	 * 删除一条记录
 	 * @param member
 	 */
 	public void delete(Entity entity);
+	
 	
 	/**
 	 * 修改数据

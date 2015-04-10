@@ -74,8 +74,14 @@ public class DepartmentemployeeServiceImpl implements
 													 Object... values)
 	{
 		if(hql == null)
-			hql = "from Departmentemployee as a";
+			hql = "from Departmentemployee as a order by a.deId asc";
 		return dao.findPageByFetchedHql(hql, countHql, pageNo, pageSize, values);
+	}
+
+	@Override
+	public void deleteById(int id)
+	{
+		dao.deleteById(id);
 	}
 
 }

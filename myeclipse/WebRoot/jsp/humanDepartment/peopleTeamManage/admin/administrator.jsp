@@ -25,7 +25,7 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/administrator.jsp">
+					<a class="navbar-brand" href="SupToDM_goToSuperManagerP.action">
 						<img alt="Brand" src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/img/未标题-1.png">
 					</a>
 					<p class="navbar-text">华南农业大学创新创业学院<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您：<s:property value="#session.name"/></small>

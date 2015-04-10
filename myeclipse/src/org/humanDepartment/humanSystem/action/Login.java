@@ -118,13 +118,15 @@ public class Login extends BaseAction
 				//TODO 这返回的是部门管理员（部长或老师）登陆页，还有部门信息提示需要添加或者其他的业务功能
 				dmService = (DepartmentmanagerService) SpringUtil.getBean("departmentmanagerService");
 				departmentManager = dmService.findById(user.getUpId());
-				deService = (DepartmentemployeeService) SpringUtil.getBean("departmentemployeeService");
-				pageResults = deService.findAPage(null, null, 0, 10);
-				return "departmentManager";
+				session.put("name", departmentManager.getDmName());
+				session.put("id", departmentManager.getDmId());
+				return "teacherHome";
 			case 3:
 				//TODO 这返回的是部门管理员（部员或学生）登陆页，还有部门信息提示需要添加或者其他的业务功能
 				deService = (DepartmentemployeeService) SpringUtil.getBean("departmentemployeeService");
 				departmentEmployee = deService.findById(user.getUpId());
+				session.put("name", departmentEmployee.getDeName());
+				session.put("id", departmentEmployee.getDeId());
 				return "departmentEmployee";
 			case 4:
 				//TODO 

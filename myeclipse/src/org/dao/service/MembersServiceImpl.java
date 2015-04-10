@@ -5,6 +5,7 @@ import org.dao.BaseDao;
 import org.dao.PageResults;
 import org.dao.service.interf.MembersService;
 import org.humanDepartment.humanSystem.pojo.Members;
+import com.mysql.fabric.xmlrpc.base.Member;
 public class MembersServiceImpl implements MembersService
 {
 	
@@ -60,7 +61,7 @@ public class MembersServiceImpl implements MembersService
 	@Override
 	public Members findById(int id)
 	{
-		return dao.get(id);
+		return (Members) this.dao.getSession().get(Members.class,id);
 	}
 
 	@Override
@@ -71,7 +72,7 @@ public class MembersServiceImpl implements MembersService
 								 Object... values)
 	{
 		if(hql == null)
-			hql = "from Members as a";
+			hql = "from Members";
 		return dao.findPageByFetchedHql(hql, countHql, pageNo, pageSize, values);
 	}
 

@@ -37,6 +37,7 @@ public class BaseAction extends ActionSupport implements
 	protected HttpServletRequest request;
 	protected Map session;
 	protected ServletContext application;
+	protected String message;
 	
 	public void setServletRequest(HttpServletRequest request) {
 	this.request = request;
@@ -48,6 +49,18 @@ public class BaseAction extends ActionSupport implements
 	}
 	public void setServletContext(ServletContext application) {
 	this.application = application;
+	}
+	
+//	以下是getter和setter
+
+	public String getMessage()
+	{
+		return message;
+	}
+
+	public void setMessage(String message)
+	{
+		this.message = message;
 	}
 	
 }
