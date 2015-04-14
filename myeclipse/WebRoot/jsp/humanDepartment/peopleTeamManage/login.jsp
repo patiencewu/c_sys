@@ -19,8 +19,14 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	</head>
-
-	<body>
+	<s:if test="message != null">
+	<script type="text/javascript">
+	function display_alert()
+	  {
+ 	 alert("资料修改成功！！\r\n请用新账号密码登陆！！");
+ 	 }
+	</script></s:if>
+	<body onLoad="display_alert()">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-offset-7 col-lg-3">
@@ -28,7 +34,7 @@
 						<h2 align="center" class="font-color top-margion">用户登录</h2>
 						<br />
 						<br />
-						<form class="form-horizontal" role="form" action="Login.action">
+						<form class="form-horizontal" role="form" method="post" action="Login.action">
 							<div class="form-group">
 								<label class="col-lg-3 control-label font-color">账号：</label>
 								<div class="col-lg-8">

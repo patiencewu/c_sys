@@ -33,6 +33,7 @@ public class SuperMangerToDepartmentManager extends BaseAction
 	public String addNewDM(){
 		int ran = (int)(10000+Math.random()*(80000));
 		UserpasswordService uService = (UserpasswordService) SpringUtil.getBean("userpasswordService");
+		while(uService.findUserById(String.valueOf(ran)) != null) {ran = (int)(10000+Math.random()*(80000));}
 		Userpassword user = (Userpassword) SpringUtil.getBean("userPassword");
 		newDM = String.valueOf(ran);
 		user.setUpUser(newDM);

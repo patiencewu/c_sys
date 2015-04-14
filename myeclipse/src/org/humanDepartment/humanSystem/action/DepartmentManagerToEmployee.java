@@ -21,6 +21,7 @@ public class DepartmentManagerToEmployee extends BaseAction
 	private PageResults pageResults;
 	private PageResults<Userpassword> pageResults1;
 	private PageResults<Userpassword> pageResults2;
+	private String departmentId;
 
 
 
@@ -69,18 +70,28 @@ public class DepartmentManagerToEmployee extends BaseAction
 	
 //	前往人员管理页面，同时查询相关的人员（部员）（DepartmentEmployee）
 	public String goToManageDE(){
+		String dep="";//TODO 这里要修改一下，这里有东西
 		UserpasswordService uService = (UserpasswordService) SpringUtil.getBean("userpasswordService");
 		DepartmentemployeeService deService = (DepartmentemployeeService) SpringUtil.getBean("departmentemployeeService");
+		if(departmentId != null && !departmentId.equals("0")) dep = "where a.deDepartmentId = " + departmentId;
 		//pageResults2表示没有录入详细信息的部员
 		pageResults2 = uService.findAllUserInPage("from Userpassword as a where a.upPower>=121 and a.upPower<=124", null, 1, 10);
 		//pageResults1表示录入了详细信息的部员的账号密码
 		pageResults1 = uService.findAllUserInPage("from Userpassword as a where a.upPower = 3 order by a.upId asc", null, 1, 50);
 		//pageResults表示部员的详细信息
-		pageResults = deService.findAPage(null, null, 1, 50); 
+		pageResults = deService.findAPage("from Departmentemployee as a "+ dep +" order by a.deId asc", null, 1, 50); 
 		return "manageDE";
 	}
 	
-//	修改对应的密码
+public String getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(String departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	//	修改对应的密码
 	public String changePassword(){
 		if(!newPassword.equals(confirmPassword)) { message = "密码修改成功"; return "changeError";}
 		DepartmentmanagerService service = (DepartmentmanagerService) SpringUtil.getBean("departmentmanagerService");

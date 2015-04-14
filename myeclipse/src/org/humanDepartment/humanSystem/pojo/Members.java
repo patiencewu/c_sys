@@ -1,20 +1,16 @@
-
 package org.humanDepartment.humanSystem.pojo;
-
 
 /**
  * Members entity. @author MyEclipse Persistence Tools
  */
 
-public class Members implements java.io.Serializable
-{
-
+public class Members implements java.io.Serializable {
 
 	// Fields
 
 	private Integer MId;
 	private String MName;
-	private String MIdNumeber;
+	private String MIdNumber;
 	private String MStudentNumber;
 	private String MSex;
 	private String MBirthday;
@@ -38,57 +34,26 @@ public class Members implements java.io.Serializable
 	private String MEmail;
 	private String MHomeAddress;
 	private Integer version;
-
+	private String MTeamName;
+	private Integer MTeamId;
 
 	// Constructors
 
 	/** default constructor */
-	public Members()
-	{}
-
-	/** minimal constructor */
-	public Members(String MName,
-				   String MIdNumeber,
-				   String MSex,
-				   String MNation,
-				   String MNativePlace)
-	{
-		this.MName = MName;
-		this.MIdNumeber = MIdNumeber;
-		this.MSex = MSex;
-		this.MNation = MNation;
-		this.MNativePlace = MNativePlace;
+	public Members() {
 	}
 
 	/** full constructor */
-	public Members(String MName,
-				   String MIdNumeber,
-				   String MStudentNumber,
-				   String MSex,
-				   String MBirthday,
-				   String MNation,
-				   String MNativePlace,
-				   String MPliticsStatus,
-				   String MSchool,
-				   String MCollege,
-				   String MDepartment,
-				   String MClass,
-				   String MMajor,
-				   Integer MGrade,
-				   String MEducationBackground,
-				   Boolean MStudents,
-				   String MSphone,
-				   String MLphone,
-				   String MAddress,
-				   String MPostcode,
-				   String MPhoto,
-				   Integer MEducationSystem,
-				   String MEmail,
-				   String MHomeAddress,
-				   Integer version)
-	{
+	public Members(String MName, String MIdNumber, String MStudentNumber,
+			String MSex, String MBirthday, String MNation, String MNativePlace,
+			String MPliticsStatus, String MSchool, String MCollege,
+			String MDepartment, String MClass, String MMajor, Integer MGrade,
+			String MEducationBackground, Boolean MStudents, String MSphone,
+			String MLphone, String MAddress, String MPostcode, String MPhoto,
+			Integer MEducationSystem, String MEmail, String MHomeAddress,
+			Integer version, String MTeamName, Integer MTeamId) {
 		this.MName = MName;
-		this.MIdNumeber = MIdNumeber;
+		this.MIdNumber = MIdNumber;
 		this.MStudentNumber = MStudentNumber;
 		this.MSex = MSex;
 		this.MBirthday = MBirthday;
@@ -112,270 +77,234 @@ public class Members implements java.io.Serializable
 		this.MEmail = MEmail;
 		this.MHomeAddress = MHomeAddress;
 		this.version = version;
+		this.MTeamName = MTeamName;
+		this.MTeamId = MTeamId;
 	}
-
 
 	// Property accessors
 
-	public Integer getMId()
-	{
+	public Integer getMId() {
 		return this.MId;
 	}
 
-	public void setMId(Integer MId)
-	{
+	public void setMId(Integer MId) {
 		this.MId = MId;
 	}
 
-	public String getMName()
-	{
+	public String getMName() {
 		return this.MName;
 	}
 
-	public void setMName(String MName)
-	{
+	public void setMName(String MName) {
 		this.MName = MName;
 	}
 
-	public String getMIdNumeber()
-	{
-		return this.MIdNumeber;
+	public String getMIdNumber() {
+		return this.MIdNumber;
 	}
 
-	public void setMIdNumeber(String MIdNumeber)
-	{
-		this.MIdNumeber = MIdNumeber;
+	public void setMIdNumber(String MIdNumber) {
+		this.MIdNumber = MIdNumber;
 	}
 
-	public String getMStudentNumber()
-	{
+	public String getMStudentNumber() {
 		return this.MStudentNumber;
 	}
 
-	public void setMStudentNumber(String MStudentNumber)
-	{
+	public void setMStudentNumber(String MStudentNumber) {
 		this.MStudentNumber = MStudentNumber;
 	}
 
-	public String getMSex()
-	{
+	public String getMSex() {
 		return this.MSex;
 	}
 
-	public void setMSex(String MSex)
-	{
+	public void setMSex(String MSex) {
 		this.MSex = MSex;
 	}
 
-	public String getMBirthday()
-	{
+	public String getMBirthday() {
 		return this.MBirthday;
 	}
 
-	public void setMBirthday(String MBirthday)
-	{
+	public void setMBirthday(String MBirthday) {
 		this.MBirthday = MBirthday;
 	}
 
-	public String getMNation()
-	{
+	public String getMNation() {
 		return this.MNation;
 	}
 
-	public void setMNation(String MNation)
-	{
+	public void setMNation(String MNation) {
 		this.MNation = MNation;
 	}
 
-	public String getMNativePlace()
-	{
+	public String getMNativePlace() {
 		return this.MNativePlace;
 	}
 
-	public void setMNativePlace(String MNativePlace)
-	{
+	public void setMNativePlace(String MNativePlace) {
 		this.MNativePlace = MNativePlace;
 	}
 
-	public String getMPliticsStatus()
-	{
+	public String getMPliticsStatus() {
 		return this.MPliticsStatus;
 	}
 
-	public void setMPliticsStatus(String MPliticsStatus)
-	{
+	public void setMPliticsStatus(String MPliticsStatus) {
 		this.MPliticsStatus = MPliticsStatus;
 	}
 
-	public String getMSchool()
-	{
+	public String getMSchool() {
 		return this.MSchool;
 	}
 
-	public void setMSchool(String MSchool)
-	{
+	public void setMSchool(String MSchool) {
 		this.MSchool = MSchool;
 	}
 
-	public String getMCollege()
-	{
+	public String getMCollege() {
 		return this.MCollege;
 	}
 
-	public void setMCollege(String MCollege)
-	{
+	public void setMCollege(String MCollege) {
 		this.MCollege = MCollege;
 	}
 
-	public String getMDepartment()
-	{
+	public String getMDepartment() {
 		return this.MDepartment;
 	}
 
-	public void setMDepartment(String MDepartment)
-	{
+	public void setMDepartment(String MDepartment) {
 		this.MDepartment = MDepartment;
 	}
 
-	public String getMClass()
-	{
+	public String getMClass() {
 		return this.MClass;
 	}
 
-	public void setMClass(String MClass)
-	{
+	public void setMClass(String MClass) {
 		this.MClass = MClass;
 	}
 
-	public String getMMajor()
-	{
+	public String getMMajor() {
 		return this.MMajor;
 	}
 
-	public void setMMajor(String MMajor)
-	{
+	public void setMMajor(String MMajor) {
 		this.MMajor = MMajor;
 	}
 
-	public Integer getMGrade()
-	{
+	public Integer getMGrade() {
 		return this.MGrade;
 	}
 
-	public void setMGrade(Integer MGrade)
-	{
+	public void setMGrade(Integer MGrade) {
 		this.MGrade = MGrade;
 	}
 
-	public String getMEducationBackground()
-	{
+	public String getMEducationBackground() {
 		return this.MEducationBackground;
 	}
 
-	public void setMEducationBackground(String MEducationBackground)
-	{
+	public void setMEducationBackground(String MEducationBackground) {
 		this.MEducationBackground = MEducationBackground;
 	}
 
-	public Boolean getMStudents()
-	{
+	public Boolean getMStudents() {
 		return this.MStudents;
 	}
 
-	public void setMStudents(Boolean MStudents)
-	{
+	public void setMStudents(Boolean MStudents) {
 		this.MStudents = MStudents;
 	}
 
-	public String getMSphone()
-	{
+	public String getMSphone() {
 		return this.MSphone;
 	}
 
-	public void setMSphone(String MSphone)
-	{
+	public void setMSphone(String MSphone) {
 		this.MSphone = MSphone;
 	}
 
-	public String getMLphone()
-	{
+	public String getMLphone() {
 		return this.MLphone;
 	}
 
-	public void setMLphone(String MLphone)
-	{
+	public void setMLphone(String MLphone) {
 		this.MLphone = MLphone;
 	}
 
-	public String getMAddress()
-	{
+	public String getMAddress() {
 		return this.MAddress;
 	}
 
-	public void setMAddress(String MAddress)
-	{
+	public void setMAddress(String MAddress) {
 		this.MAddress = MAddress;
 	}
 
-	public String getMPostcode()
-	{
+	public String getMPostcode() {
 		return this.MPostcode;
 	}
 
-	public void setMPostcode(String MPostcode)
-	{
+	public void setMPostcode(String MPostcode) {
 		this.MPostcode = MPostcode;
 	}
 
-	public String getMPhoto()
-	{
+	public String getMPhoto() {
 		return this.MPhoto;
 	}
 
-	public void setMPhoto(String MPhoto)
-	{
+	public void setMPhoto(String MPhoto) {
 		this.MPhoto = MPhoto;
 	}
 
-	public Integer getMEducationSystem()
-	{
+	public Integer getMEducationSystem() {
 		return this.MEducationSystem;
 	}
 
-	public void setMEducationSystem(Integer MEducationSystem)
-	{
+	public void setMEducationSystem(Integer MEducationSystem) {
 		this.MEducationSystem = MEducationSystem;
 	}
 
-	public String getMEmail()
-	{
+	public String getMEmail() {
 		return this.MEmail;
 	}
 
-	public void setMEmail(String MEmail)
-	{
+	public void setMEmail(String MEmail) {
 		this.MEmail = MEmail;
 	}
 
-	public String getMHomeAddress()
-	{
+	public String getMHomeAddress() {
 		return this.MHomeAddress;
 	}
 
-	public void setMHomeAddress(String MHomeAddress)
-	{
+	public void setMHomeAddress(String MHomeAddress) {
 		this.MHomeAddress = MHomeAddress;
 	}
 
-	public Integer getVersion()
-	{
+	public Integer getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(Integer version)
-	{
+	public void setVersion(Integer version) {
 		this.version = version;
 	}
 
+	public String getMTeamName() {
+		return this.MTeamName;
+	}
+
+	public void setMTeamName(String MTeamName) {
+		this.MTeamName = MTeamName;
+	}
+
+	public Integer getMTeamId() {
+		return this.MTeamId;
+	}
+
+	public void setMTeamId(Integer MTeamId) {
+		this.MTeamId = MTeamId;
+	}
 
 }

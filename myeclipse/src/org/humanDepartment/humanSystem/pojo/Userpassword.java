@@ -1,14 +1,10 @@
-
 package org.humanDepartment.humanSystem.pojo;
-
 
 /**
  * Userpassword entity. @author MyEclipse Persistence Tools
  */
 
-public class Userpassword implements java.io.Serializable
-{
-
+public class Userpassword implements java.io.Serializable {
 
 	// Fields
 
@@ -18,91 +14,69 @@ public class Userpassword implements java.io.Serializable
 	private Short upPower;
 	private Integer version;
 
-
 	// Constructors
 
 	/** default constructor */
-	public Userpassword()
-	{}
+	public Userpassword() {
+	}
 
 	/** minimal constructor */
-	public Userpassword(String upUser,
-						String upPassword,
-						Integer upId,
-						Short upPower)
-	{
+	public Userpassword(String upUser, String upPassword, Short upPower) {
 		this.upUser = upUser;
 		this.upPassword = upPassword;
-		this.upId = upId;
 		this.upPower = upPower;
 	}
 
 	/** full constructor */
-	public Userpassword(String upUser,
-						String upPassword,
-						Integer upId,
-						Short upPower,
-						Integer version)
-	{
+	public Userpassword(String upUser, String upPassword, Integer upId,
+			Short upPower, Integer version) {
 		this.upUser = upUser;
 		this.upPassword = upPassword;
 		this.upId = upId;
 		this.upPower = upPower;
 		this.version = version;
 	}
-
 
 	// Property accessors
 
-	public String getUpUser()
-	{
+	public String getUpUser() {
 		return this.upUser;
 	}
 
-	public void setUpUser(String upUser)
-	{
+	public void setUpUser(String upUser) {
 		this.upUser = upUser;
 	}
 
-	public String getUpPassword()
-	{
+	public String getUpPassword() {
 		return this.upPassword;
 	}
 
-	public void setUpPassword(String upPassword)
-	{
+	public void setUpPassword(String upPassword) {
 		this.upPassword = upPassword;
 	}
 
-	public Integer getUpId()
-	{
+	public Integer getUpId() {
 		return this.upId;
 	}
 
-	public void setUpId(Integer upId)
-	{
+	public void setUpId(Integer upId) {
 		this.upId = upId;
 	}
 
-	public Short getUpPower()
-	{
+	public Short getUpPower() {
 		return this.upPower;
 	}
 
-	public void setUpPower(Short upPower)
-	{
+	public void setUpPower(Short upPower) {
 		this.upPower = upPower;
 	}
 
-	public Integer getVersion()
-	{
+	public Integer getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(Integer version)
-	{
+	public void setVersion(Integer version) {
 		this.version = version;
 	}
-
 
 }

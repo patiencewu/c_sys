@@ -1,14 +1,10 @@
-
 package org.humanDepartment.humanSystem.pojo;
-
 
 /**
  * Departmentmanager entity. @author MyEclipse Persistence Tools
  */
 
-public class Departmentmanager implements java.io.Serializable
-{
-
+public class Departmentmanager implements java.io.Serializable {
 
 	// Fields
 
@@ -26,34 +22,17 @@ public class Departmentmanager implements java.io.Serializable
 	private Integer dmDepartmentId;
 	private Integer version;
 
-
 	// Constructors
 
 	/** default constructor */
-	public Departmentmanager()
-	{}
-
-	/** minimal constructor */
-	public Departmentmanager(String dmName, String dmSex)
-	{
-		this.dmName = dmName;
-		this.dmSex = dmSex;
+	public Departmentmanager() {
 	}
 
 	/** full constructor */
-	public Departmentmanager(String dmName,
-							 String dmSex,
-							 String dmBirthday,
-							 String dmLphone,
-							 String dmSphone,
-							 String dmEmail,
-							 String dmAddress,
-							 String dmOtherContactInformation,
-							 String dmPhoto,
-							 String dmPostcode,
-							 Integer dmDepartmentId,
-							 Integer version)
-	{
+	public Departmentmanager(String dmName, String dmSex, String dmBirthday,
+			String dmLphone, String dmSphone, String dmEmail, String dmAddress,
+			String dmOtherContactInformation, String dmPhoto,
+			String dmPostcode, Integer dmDepartmentId, Integer version) {
 		this.dmName = dmName;
 		this.dmSex = dmSex;
 		this.dmBirthday = dmBirthday;
@@ -67,139 +46,111 @@ public class Departmentmanager implements java.io.Serializable
 		this.dmDepartmentId = dmDepartmentId;
 		this.version = version;
 	}
-
 
 	// Property accessors
 
-	public Integer getDmId()
-	{
+	public Integer getDmId() {
 		return this.dmId;
 	}
 
-	public void setDmId(Integer dmId)
-	{
+	public void setDmId(Integer dmId) {
 		this.dmId = dmId;
 	}
 
-	public String getDmName()
-	{
+	public String getDmName() {
 		return this.dmName;
 	}
 
-	public void setDmName(String dmName)
-	{
+	public void setDmName(String dmName) {
 		this.dmName = dmName;
 	}
 
-	public String getDmSex()
-	{
+	public String getDmSex() {
 		return this.dmSex;
 	}
 
-	public void setDmSex(String dmSex)
-	{
+	public void setDmSex(String dmSex) {
 		this.dmSex = dmSex;
 	}
 
-	public String getDmBirthday()
-	{
+	public String getDmBirthday() {
 		return this.dmBirthday;
 	}
 
-	public void setDmBirthday(String dmBirthday)
-	{
+	public void setDmBirthday(String dmBirthday) {
 		this.dmBirthday = dmBirthday;
 	}
 
-	public String getDmLphone()
-	{
+	public String getDmLphone() {
 		return this.dmLphone;
 	}
 
-	public void setDmLphone(String dmLphone)
-	{
+	public void setDmLphone(String dmLphone) {
 		this.dmLphone = dmLphone;
 	}
 
-	public String getDmSphone()
-	{
+	public String getDmSphone() {
 		return this.dmSphone;
 	}
 
-	public void setDmSphone(String dmSphone)
-	{
+	public void setDmSphone(String dmSphone) {
 		this.dmSphone = dmSphone;
 	}
 
-	public String getDmEmail()
-	{
+	public String getDmEmail() {
 		return this.dmEmail;
 	}
 
-	public void setDmEmail(String dmEmail)
-	{
+	public void setDmEmail(String dmEmail) {
 		this.dmEmail = dmEmail;
 	}
 
-	public String getDmAddress()
-	{
+	public String getDmAddress() {
 		return this.dmAddress;
 	}
 
-	public void setDmAddress(String dmAddress)
-	{
+	public void setDmAddress(String dmAddress) {
 		this.dmAddress = dmAddress;
 	}
 
-	public String getDmOtherContactInformation()
-	{
+	public String getDmOtherContactInformation() {
 		return this.dmOtherContactInformation;
 	}
 
-	public void setDmOtherContactInformation(String dmOtherContactInformation)
-	{
+	public void setDmOtherContactInformation(String dmOtherContactInformation) {
 		this.dmOtherContactInformation = dmOtherContactInformation;
 	}
 
-	public String getDmPhoto()
-	{
+	public String getDmPhoto() {
 		return this.dmPhoto;
 	}
 
-	public void setDmPhoto(String dmPhoto)
-	{
+	public void setDmPhoto(String dmPhoto) {
 		this.dmPhoto = dmPhoto;
 	}
 
-	public String getDmPostcode()
-	{
+	public String getDmPostcode() {
 		return this.dmPostcode;
 	}
 
-	public void setDmPostcode(String dmPostcode)
-	{
+	public void setDmPostcode(String dmPostcode) {
 		this.dmPostcode = dmPostcode;
 	}
 
-	public Integer getDmDepartmentId()
-	{
+	public Integer getDmDepartmentId() {
 		return this.dmDepartmentId;
 	}
 
-	public void setDmDepartmentId(Integer dmDepartmentId)
-	{
+	public void setDmDepartmentId(Integer dmDepartmentId) {
 		this.dmDepartmentId = dmDepartmentId;
 	}
 
-	public Integer getVersion()
-	{
+	public Integer getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(Integer version)
-	{
+	public void setVersion(Integer version) {
 		this.version = version;
 	}
-
 
 }

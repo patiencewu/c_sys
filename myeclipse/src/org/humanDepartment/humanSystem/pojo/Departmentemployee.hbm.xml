@@ -11,10 +11,10 @@
             <generator class="native" />
         </id>
         <property name="deName" type="java.lang.String">
-            <column name="de_name" length="10" not-null="true" />
+            <column name="de_name" length="10" />
         </property>
         <property name="deSex" type="java.lang.String">
-            <column name="de_sex" length="6" not-null="true" />
+            <column name="de_sex" length="6" />
         </property>
         <property name="dmBirthday" type="java.lang.String">
             <column name="dm_birthday" length="10" />
@@ -54,6 +54,9 @@
         </property>
         <property name="version" type="java.lang.Integer">
             <column name="version" />
+        </property>
+        <property name="deSutdentPower" type="java.lang.Integer">
+            <column name="de_sutdentPower" />
         </property>
     </class>
 </hibernate-mapping>

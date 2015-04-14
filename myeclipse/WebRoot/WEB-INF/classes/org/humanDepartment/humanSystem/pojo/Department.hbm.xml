@@ -11,10 +11,10 @@
             <generator class="native" />
         </id>
         <property name="DName" type="java.lang.String">
-            <column name="d_name" length="10" not-null="true" />
+            <column name="d_name" length="10" />
         </property>
         <property name="DAmount" type="java.lang.Short">
-            <column name="d_amount" not-null="true" />
+            <column name="d_amount" />
         </property>
         <property name="DDescription" type="java.lang.String">
             <column name="d_description" />

@@ -4688,7 +4688,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 	list-style: none;
 	background-color: #FFFFFF;
 	/*border-radius: 4px*/
-	border-bottom: solid 2px #999999;/*改*/
+	/*border-bottom: solid 2px #999999;*/
 }
 .breadcrumb>li {
 	display: inline-block

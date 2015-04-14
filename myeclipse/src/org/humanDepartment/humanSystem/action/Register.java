@@ -2,9 +2,14 @@ package org.humanDepartment.humanSystem.action;
 
 import java.sql.Date;
 import java.util.Map;
+
 import org.BaseAction;
+import org.dao.service.interf.DepartmentemployeeService;
+import org.dao.service.interf.DepartmentmanagerService;
 import org.dao.service.interf.MembersService;
 import org.dao.service.interf.UserpasswordService;
+import org.humanDepartment.humanSystem.pojo.Departmentemployee;
+import org.humanDepartment.humanSystem.pojo.Departmentmanager;
 import org.humanDepartment.humanSystem.pojo.Members;
 import org.humanDepartment.humanSystem.pojo.Userpassword;
 import org.model.SpringUtil;
@@ -62,7 +67,7 @@ public class Register extends BaseAction
 		member.setMEmail(email);
 		member.setMGrade(Integer.valueOf(grade));
 		member.setMHomeAddress(homeaddress);
-		member.setMIdNumeber(idNumber);
+		member.setMIdNumber(idNumber);
 		member.setMLphone(lphone);
 		member.setMMajor(major);
 		member.setMName(name);
@@ -85,10 +90,94 @@ public class Register extends BaseAction
 		user.setUpPower((short) 4);
 		user.setUpPassword(password);
 		user.setUpId(id);
+		uService.addUser(user);
 		this.message = "注册成功";
 		return "login";
 	}
 
+//	老师首次登陆进行信息录入注册
+	public String teacherEnroll(){
+		Userpassword user = uService.findUserById(userName);
+		if(user != null) {
+			this.message = "账号已经被注册，请换个账号试试";
+			return "teacherDataChange";
+		}
+		
+		Departmentmanager dm = (Departmentmanager) SpringUtil.getBean("departmentManager");
+		dm.setDmName(name);
+		dm.setDmAddress(address);
+		dm.setDmLphone(lphone);
+		dm.setDmSphone(sphone);
+		dm.setDmEmail(email);
+		if(session.get("power").equals(111))
+			dm.setDmDepartmentId(1);
+		if(session.get("power").equals(112))
+			dm.setDmDepartmentId(2);
+		if(session.get("power").equals(113))
+			dm.setDmDepartmentId(3);
+		if(session.get("power").equals(114))
+			dm.setDmDepartmentId(4);
+		else dm.setDmDepartmentId(0);
+		
+		DepartmentmanagerService dmService = (DepartmentmanagerService) SpringUtil.getBean("departmentmanagerService");
+		
+		int id = dmService.add(dm);
+		
+		user = (Userpassword) SpringUtil.getBean("userPassword");
+		user.setUpUser(userName);
+		user.setUpPower((short) 2);
+		user.setUpPassword(password);
+		user.setUpId(id);
+		uService.addUser(user);
+		uService.delUserById((String) session.get("userName"));
+		this.message = "资料修改成功";
+		return "login";
+	}
+	
+//	学生管理员首次登陆进行信息录入注册
+	public String employeeEnroll(){
+		Userpassword user = uService.findUserById(userName);
+		if(user != null) {
+			this.message = "账号已经被注册，请换个账号试试";
+			return "teacherDataChange";
+		}
+		
+		Departmentemployee de = (Departmentemployee) SpringUtil.getBean("departmentEmployee");
+		de.setDeAddress(address);
+		de.setDeClass(clazz);
+		de.setDeCollege(college);
+		if(session.get("power").equals(121))
+			de.setDeDepartmentId(1);
+		if(session.get("power").equals(122))
+			de.setDeDepartmentId(2);
+		if(session.get("power").equals(123))
+			de.setDeDepartmentId(3);
+		if(session.get("power").equals(124))
+			de.setDeDepartmentId(4);
+		else de.setDeDepartmentId(0);
+		de.setDeEmail(email);
+		de.setDeLphone(lphone);
+		de.setDeMajor(major);
+		de.setDeName(name);
+		de.setDeSex(sex);
+		de.setDeSphone(sphone);
+		de.setDmBirthday(birthDay);
+		
+		DepartmentemployeeService deService = (DepartmentemployeeService) SpringUtil.getBean("departmentemployeeService");
+		
+		int id = deService.add(de);
+		
+		user = (Userpassword) SpringUtil.getBean("userPassword");
+		user.setUpUser(userName);
+		user.setUpPower((short) 3);
+		user.setUpPassword(password);
+		user.setUpId(id);
+		uService.addUser(user);
+		uService.delUserById((String) session.get("userName"));
+		this.message = "资料修改成功";
+		return "login";
+	}
+	
 	public String goToRegister(){
 		return "register";
 	}

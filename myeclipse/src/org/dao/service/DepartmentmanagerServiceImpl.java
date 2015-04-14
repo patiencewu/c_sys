@@ -63,7 +63,7 @@ public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 	@Override
 	public Departmentmanager findById(int id)
 	{
-		return dao.get(id);
+		return (Departmentmanager) dao.getSession().get(Departmentmanager.class,id);
 	}
 
 	@Override

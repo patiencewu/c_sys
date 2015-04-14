@@ -11,25 +11,25 @@
             <generator class="native" />
         </id>
         <property name="MName" type="java.lang.String">
-            <column name="m_name" length="10" not-null="true" />
+            <column name="m_name" length="10" />
         </property>
-        <property name="MIdNumeber" type="java.lang.String">
-            <column name="m_idNumeber" length="18" not-null="true" />
+        <property name="MIdNumber" type="java.lang.String">
+            <column name="m_idNumber" length="18" />
         </property>
         <property name="MStudentNumber" type="java.lang.String">
             <column name="m_studentNumber" length="12" />
         </property>
         <property name="MSex" type="java.lang.String">
-            <column name="m_sex" length="4" not-null="true" />
+            <column name="m_sex" length="4" />
         </property>
         <property name="MBirthday" type="java.lang.String">
             <column name="m_birthday" />
         </property>
         <property name="MNation" type="java.lang.String">
-            <column name="m_nation" not-null="false" />
+            <column name="m_nation" />
         </property>
         <property name="MNativePlace" type="java.lang.String">
-            <column name="m_nativePlace" not-null="false" />
+            <column name="m_nativePlace" />
         </property>
         <property name="MPliticsStatus" type="java.lang.String">
             <column name="m_pliticsStatus" />
@@ -84,6 +84,12 @@
         </property>
         <property name="version" type="java.lang.Integer">
             <column name="version" />
+        </property>
+        <property name="MTeamName" type="java.lang.String">
+            <column name="m_teamName" />
+        </property>
+        <property name="MTeamId" type="java.lang.Integer">
+            <column name="m_teamId" />
         </property>
     </class>
 </hibernate-mapping>

@@ -1,14 +1,10 @@
-
 package org.humanDepartment.humanSystem.pojo;
-
 
 /**
  * Department entity. @author MyEclipse Persistence Tools
  */
 
-public class Department implements java.io.Serializable
-{
-
+public class Department implements java.io.Serializable {
 
 	// Fields
 
@@ -18,84 +14,61 @@ public class Department implements java.io.Serializable
 	private String DDescription;
 	private Integer version;
 
-
 	// Constructors
 
 	/** default constructor */
-	public Department()
-	{}
-
-	/** minimal constructor */
-	public Department(String DName, Short DAmount)
-	{
-		this.DName = DName;
-		this.DAmount = DAmount;
+	public Department() {
 	}
 
 	/** full constructor */
-	public Department(String DName,
-					  Short DAmount,
-					  String DDescription,
-					  Integer version)
-	{
+	public Department(String DName, Short DAmount, String DDescription,
+			Integer version) {
 		this.DName = DName;
 		this.DAmount = DAmount;
 		this.DDescription = DDescription;
 		this.version = version;
 	}
-
 
 	// Property accessors
 
-	public Integer getDId()
-	{
+	public Integer getDId() {
 		return this.DId;
 	}
 
-	public void setDId(Integer DId)
-	{
+	public void setDId(Integer DId) {
 		this.DId = DId;
 	}
 
-	public String getDName()
-	{
+	public String getDName() {
 		return this.DName;
 	}
 
-	public void setDName(String DName)
-	{
+	public void setDName(String DName) {
 		this.DName = DName;
 	}
 
-	public Short getDAmount()
-	{
+	public Short getDAmount() {
 		return this.DAmount;
 	}
 
-	public void setDAmount(Short DAmount)
-	{
+	public void setDAmount(Short DAmount) {
 		this.DAmount = DAmount;
 	}
 
-	public String getDDescription()
-	{
+	public String getDDescription() {
 		return this.DDescription;
 	}
 
-	public void setDDescription(String DDescription)
-	{
+	public void setDDescription(String DDescription) {
 		this.DDescription = DDescription;
 	}
 
-	public Integer getVersion()
-	{
+	public Integer getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(Integer version)
-	{
+	public void setVersion(Integer version) {
 		this.version = version;
 	}
-
 
 }

@@ -90,7 +90,7 @@ footer.authenticated-footer .list-inline li {
 	color: #a4a4a4;
 	padding-bottom: 30px;
 }
-/*********************************************自定义部分*********************************************/
+/*********************************************鑷畾涔夐儴鍒�********************************************/
 
 .secondmenu a {
 	font-size: 12px;
@@ -172,7 +172,7 @@ footer.authenticated-footer .list-inline li {
 	opacity: 0.6;
 }
 .font-color {
-	font: "微软雅黑";
+	font: "寰蒋闆呴粦";
 	color: #FFFFFF;
 	position: relative;
 }
@@ -183,9 +183,34 @@ footer.authenticated-footer .list-inline li {
 .top-margion {
 	padding-top: 15px;
 }
+.top-margion-20 {
+	padding-top: 20px;
+}
+.top-margion-24 {
+	margin-top: 24px;
+}
+.top-margion-55 {
+	padding-top: 55px;
+}
+.top-margion-5{
+	padding-top: 15px;
+}
+.left-margion{
+	padding-left: 15px;
+}
+.right-margion{
+	padding-right: 50px;
+}
 .slection-position {
 	position: relative;
 	left: 30px;
 	margin-top: 25px;
 	margin-bottom: 10px;
+}
+.bg-color{
+	background: #FFFFFF;
+	border-radius: 5px;
+}
+.body-bg{
+	background: #EDEFF0;
 }

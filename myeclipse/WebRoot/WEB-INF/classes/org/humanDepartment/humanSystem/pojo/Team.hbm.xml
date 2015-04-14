@@ -11,10 +11,10 @@
             <generator class="native" />
         </id>
         <property name="TName" type="java.lang.String">
-            <column name="t_name" length="20" not-null="true" />
+            <column name="t_name" length="20" />
         </property>
         <property name="TAmount" type="java.lang.Short">
-            <column name="t_amount" not-null="true" />
+            <column name="t_amount" />
         </property>
         <property name="TDescription" type="java.lang.String">
             <column name="t_description" />
@@ -23,13 +23,13 @@
             <column name="t_teacher" length="20" />
         </property>
         <property name="TSetUpTime" type="java.lang.String">
-            <column name="t_setUpTime" length="10" not-null="true" />
+            <column name="t_setUpTime" length="10" />
         </property>
         <property name="TStatus" type="java.lang.String">
-            <column name="t_status" length="0" not-null="true" />
+            <column name="t_status" length="0" />
         </property>
         <property name="TLeaderId" type="java.lang.Integer">
-            <column name="t_leaderID" not-null="true" />
+            <column name="t_leaderID" />
         </property>
         <property name="version" type="java.lang.Integer">
             <column name="version" />
