@@ -1,5 +1,11 @@
 jQuery(function($) {
 
+	
+	var pic ="";            
+	$(function(){                               
+		pic = $("#pic").val();   
+	}); 
+	
 	$.supersized({
 
 		// Functionality
@@ -21,22 +27,22 @@ jQuery(function($) {
 		slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
 		slides: [ // Slideshow Images
 			{
-				image: 'http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/1.jpg'
+				image: pic + '/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/1.jpg'
 			}, 
 			{
-				image: 'http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/2.jpg'
+				image: pic + '/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/2.jpg'
 			}, 
 			{
-				image: 'http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/3.jpg'
+				image: pic + '/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/3.jpg'
 			},
 			{
-				image: 'http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/4.jpg'
+				image: pic + '/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/4.jpg'
 			},
 			{
-				image: 'http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/5.jpg'
+				image: pic + '/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/5.jpg'
 			},
 			{
-				image: 'http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/6.jpg'
+				image: pic + '/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/6.jpg'
 			}
 		]
 

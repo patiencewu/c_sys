@@ -40,7 +40,7 @@
 						<div class="col-lg-offset-5 col-lg-3 top-margion-5">
 							<label class="glyphicon glyphicon-filter">筛选：</label>
 							<select id="departmentSelect" onChange="seletDepartment()">
-								<option selected="selected" value="0">请选择</option>
+								<option value="0">请选择</option>
 								<option value="0">全部</option>
 								<option value="4">外宣部</option>
 								<option value="1">人事部</option>

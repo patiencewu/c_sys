@@ -44,7 +44,7 @@
 										<th>姓名：</th>
 										<td><s:property value="member.mName"/></td>
 										<th>学号：</th>
-										<td><s:property value="member.mStudentId"/></td>
+										<td><s:property value="member.mStudentNumber"/></td>
 									</tr>
 									<tr>
 										<th>性别：</th>

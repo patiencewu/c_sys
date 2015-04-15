@@ -7,10 +7,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
 		<title>HONE</title>
-		<link href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css">
+		<link href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -208,8 +208,8 @@
 				</form>
 			</div>
 		</div>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
 	</body>
 
 </html>

@@ -7,11 +7,11 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/supersized.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/supersized.css" />
 		<title>注册</title>
-		<link href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -204,7 +204,7 @@
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-3">
-									<button type="button" onclick="location.href='http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/login.jsp'" class="btn btn-primary">取消</button>
+									<button type="button" onclick="location.href='${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/login.jsp'" class="btn btn-primary">取消</button>
 								</div>
 							</div>
 							<br />
@@ -215,11 +215,11 @@
 			<!--end在校信息-->
 		</div>
 		<!-- Javascript -->
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/supersized.3.2.7.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/supersized-init.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/birthday.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/supersized.3.2.7.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/supersized-init.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/birthday.js"></script>
 		<script>
 			$(function() {
 				$.ms_DatePicker({

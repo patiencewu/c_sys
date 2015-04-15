@@ -108,9 +108,11 @@ public class UserpasswordServiceImpl implements UserpasswordService
 	{
 		Userpassword user = findByPersonId(power, personId);
 		if(user != null){
-			if(user.getUpPassword().equals(oldPassword))
+			if(user.getUpPassword().equals(oldPassword)){
 				user.setUpPassword(newPassword);
-			return true;
+				dao.update(user);
+				return true;
+			}
 		}
 		return false;
 	}

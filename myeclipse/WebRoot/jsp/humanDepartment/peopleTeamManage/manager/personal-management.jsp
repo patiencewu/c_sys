@@ -9,6 +9,15 @@
 		<title>主页发布</title>
 	</head>
 
+	<script type="text/javascript">
+	function seletCaptain(){
+				var obj=document.getElementById('seletCaptain');
+				var index=obj.selectedIndex; //序号，取当前选中选项的序号
+				var val = obj.options[index].value;
+				window.location.href="DToM_goToManageMember.action?captain="+val;
+			}
+	</script>
+
 	<body style="background: #EDEFF0;">
 				<!--start主面板-->
 				<div class="col-lg-10 bg-color top-margion-24">
@@ -25,10 +34,11 @@
 						</div>
 						<div class="col-lg-offset-5 col-lg-2 top-margion-5">
 							<label class="glyphicon glyphicon-filter">筛选：</label>
-							<select name="">
-								<option value="">宣传部</option>
-								<option value="">人事部</option>
-								<option value="">行政部</option>
+							<select id="seletCaptain" onChange="seletCaptain()">
+								<option selected="selected" value="0">请选择</option>
+								<option value="0">全部</option>
+								<option value="1">队长</option>
+								<option value="2">队员</option>
 							</select>
 						</div>
 					</div>

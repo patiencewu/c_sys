@@ -39,6 +39,8 @@ public class BaseAction extends ActionSupport implements
 	protected ServletContext application;
 	protected String message;
 	
+	public BaseAction(){message=null;}
+	
 	public void setServletRequest(HttpServletRequest request) {
 	this.request = request;
 	}

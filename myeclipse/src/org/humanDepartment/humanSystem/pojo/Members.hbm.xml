@@ -91,5 +91,8 @@
         <property name="MTeamId" type="java.lang.Integer">
             <column name="m_teamId" />
         </property>
+        <property name="MIsCaptain" type="java.lang.Integer">
+            <column name="m_isCaptain" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -10,10 +10,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
 		<title>主页发布</title>
-		<link href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css">
+		<link href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#"><span class="glyphicon glyphicon-remove"></span>退出</a>
+						<li><a href="Exit.action"><span class="glyphicon glyphicon-remove"></span>退出</a>
 						</li>
 						<!--<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container top-margion-55">
 			<div class="row bg-color">
 				<div class="col-lg-3">
-					<a href="##" class="navbar-brand"><span class="glyphicon glyphicon-user">当前用户：<s:property value="#session.name"/></span></a>
+					<a href="Manager_goToSelfDeatail.action" class="navbar-brand"><span class="glyphicon glyphicon-user">当前用户：<s:property value="#session.name"/></span></a>
 				</div>
 				<div class="col-lg-3">
 					<div id="info1" class="glyphicon glyphicon-time top-margion"></div>
@@ -185,7 +185,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<!--end菜单-->
 		
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
   </body>
 </html>

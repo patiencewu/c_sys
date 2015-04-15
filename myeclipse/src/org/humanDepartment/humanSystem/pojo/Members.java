@@ -36,6 +36,7 @@ public class Members implements java.io.Serializable {
 	private Integer version;
 	private String MTeamName;
 	private Integer MTeamId;
+	private Integer MIsCaptain;
 
 	// Constructors
 
@@ -51,7 +52,8 @@ public class Members implements java.io.Serializable {
 			String MEducationBackground, Boolean MStudents, String MSphone,
 			String MLphone, String MAddress, String MPostcode, String MPhoto,
 			Integer MEducationSystem, String MEmail, String MHomeAddress,
-			Integer version, String MTeamName, Integer MTeamId) {
+			Integer version, String MTeamName, Integer MTeamId,
+			Integer MIsCaptain) {
 		this.MName = MName;
 		this.MIdNumber = MIdNumber;
 		this.MStudentNumber = MStudentNumber;
@@ -79,6 +81,7 @@ public class Members implements java.io.Serializable {
 		this.version = version;
 		this.MTeamName = MTeamName;
 		this.MTeamId = MTeamId;
+		this.MIsCaptain = MIsCaptain;
 	}
 
 	// Property accessors
@@ -305,6 +308,14 @@ public class Members implements java.io.Serializable {
 
 	public void setMTeamId(Integer MTeamId) {
 		this.MTeamId = MTeamId;
+	}
+
+	public Integer getMIsCaptain() {
+		return this.MIsCaptain;
+	}
+
+	public void setMIsCaptain(Integer MIsCaptain) {
+		this.MIsCaptain = MIsCaptain;
 	}
 
 }

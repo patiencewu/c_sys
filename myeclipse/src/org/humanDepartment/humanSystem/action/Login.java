@@ -31,7 +31,7 @@ import org.model.SpringUtil;
 
 public class Login extends BaseAction
 {
-//TODO 登陆Action，只有一个方法，返回多个值区别不同类别的人
+// 登陆Action，只有一个方法，返回多个值区别不同类别的人
 
 	/*依赖注入数据库访问DAO*/
 	private UserpasswordService service;
@@ -129,7 +129,7 @@ public class Login extends BaseAction
 				this.message = "登陆成功";
 				return "superManager";
 			case 2:
-				//TODO 这返回的是部门管理员（部长或老师）登陆页，还有部门信息提示需要添加或者其他的业务功能
+				//这返回的是部门管理员（部长或老师）登陆页，还有部门信息提示需要添加或者其他的业务功能
 				dmService = (DepartmentmanagerService) SpringUtil.getBean("departmentmanagerService");
 				departmentManager = dmService.findById(user.getUpId());
 				session.put("name", departmentManager.getDmName());
@@ -137,7 +137,7 @@ public class Login extends BaseAction
 				session.put("power", "2");
 				return "managerHome";
 			case 3:
-				//TODO 这返回的是部门管理员（部员或学生）登陆页，还有部门信息提示需要添加或者其他的业务功能
+				//这返回的是部门管理员（部员或学生）登陆页，还有部门信息提示需要添加或者其他的业务功能
 				deService = (DepartmentemployeeService) SpringUtil.getBean("departmentemployeeService");
 				departmentEmployee = deService.findById(user.getUpId());
 				session.put("name", departmentEmployee.getDeName());
@@ -146,8 +146,15 @@ public class Login extends BaseAction
 				session.put("departmentId", departmentEmployee.getDeDepartmentId());
 				return "managerHome";
 			case 4:
-				//TODO 
-				return "member";
+				//TODO 这里返回的是入住的成员的主页
+				mService = (MembersService) SpringUtil.getBean("membersService");
+				member = mService.findById(user.getUpId());
+				session.put("name", member.getMName());
+				session.put("id", member.getMId());
+				session.put("power", "4");
+				session.put("teamId", member.getMTeamId());
+				session.put("isCaptain", member.getMIsCaptain());
+				return "memberHome";
 			case 110:
 				session.put("power", 110);
 				return "teacherDataChange";
@@ -183,5 +190,9 @@ public class Login extends BaseAction
 		
 	}
 
-	
+//	退出时将session全部的保存的东西删掉
+	public String exit(){
+		session.clear();
+		return "login";
+	}
 }

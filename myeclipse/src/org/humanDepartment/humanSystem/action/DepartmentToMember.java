@@ -14,13 +14,17 @@ private PageResults<Members> pageResults;
 private String id;
 private Members member;
 private String pageNo;
+private String captain;
 
 	//前往注册会员管理
 	public String goToManageMember(){
+		String cap = "";
 		MembersService mService = (MembersService) SpringUtil.getBean("membersService");
+		
+		if(captain != null && !captain.equals("0")) cap = " where a.MIsCaptain = " + captain;
 		//pageResults表示注册会员的详细信息
 		if(pageNo == null || pageNo.equals("0")) pageNo="1";
-		pageResults = mService.findAPage(null, "select count(*) from Members", Integer.valueOf(pageNo), 10); 
+		pageResults = mService.findAPage("from Members as a" + cap + " order by a.MId", "select count(*) from Members", Integer.valueOf(pageNo), 10); 
 		return "manageMembers";
 	}
 	//查询详情
@@ -67,6 +71,9 @@ private String pageNo;
 	public void setId(String id)
 	{
 		this.id = id;
+	}
+	public void setCaptain(String captain) {
+		this.captain = captain;
 	}
 	
 	

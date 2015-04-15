@@ -7,11 +7,11 @@
 		<meta charset="utf8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/supersized.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/supersized.css" />
 		<title>登录</title>
-		<link href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/css/bootstrap.min.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -27,6 +27,8 @@
  	 }
 	</script></s:if>
 	<body onLoad="display_alert()">
+	<%-- 下面这句给对应的js输入对应的背景路径  --%>
+	<input id="pic" type="hidden" value="${pageContext.request.contextPath}"/>    
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-offset-7 col-lg-3">
@@ -75,10 +77,10 @@
 			</div>
 		</div>
 		<!-- Javascript -->
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/supersized.3.2.7.min.js"></script>
-		<script src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/js/supersized-init.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/supersized.3.2.7.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/js/supersized-init.js"></script>
 	</body>
 
 </html>

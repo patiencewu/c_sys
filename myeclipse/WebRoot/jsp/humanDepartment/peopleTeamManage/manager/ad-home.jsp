@@ -41,19 +41,19 @@
 								<!-- Wrapper for slides -->
 								<div class="carousel-inner" role="listbox">
 									<div class="item active">
-										<img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/5c4d035da0efb2befb04a5286382659e.jpg" alt="...">
+										<img src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/5c4d035da0efb2befb04a5286382659e.jpg" alt="...">
 										<div class="carousel-caption">
 											<h2>事件都去哪儿了？</h2>
 										</div>
 									</div>
 									<div class="item">
-										<img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/01eb1c9f8278c881dd064f49396ea384.png" alt="...">
+										<img src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/01eb1c9f8278c881dd064f49396ea384.png" alt="...">
 										<div class="carousel-caption">
 											随便啦
 										</div>
 									</div>
 									<div class="item">
-										<img src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/6b935fb12c926c7e316258662b5e75b4.jpg" alt="...">
+										<img src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/images/images/backgrounds/6b935fb12c926c7e316258662b5e75b4.jpg" alt="...">
 										<div class="carousel-caption">
 											随便啦
 										</div>

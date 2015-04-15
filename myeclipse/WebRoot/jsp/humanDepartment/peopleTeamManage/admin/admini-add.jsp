@@ -7,9 +7,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/css/mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/admin/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/admin/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/admin/css/mystyle.css" />
 		<title>超级管理员</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -26,7 +26,7 @@
 				var iHeight = 300; //弹出窗口的高度;
 				var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
 				var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
-				window.open("http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/add.jsp", "", "height=" + iHeight + ", width=" + iWidth + ", top=" + iTop + ", left=" + iLeft).close();
+				window.open("${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/admin/add.jsp", "", "height=" + iHeight + ", width=" + iWidth + ", top=" + iTop + ", left=" + iLeft).close();
 			}
 		</script>
 
@@ -36,13 +36,13 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="SupToDM_goToSuperManagerP.action">
-						<img alt="Brand" src="http://localhost:8080/c_sys/jsp/humanDepartment/peopleTeamManage/admin/img/未标题-1.png">
+						<img alt="Brand" src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/admin/img/未标题-1.png">
 					</a>
 					<p class="navbar-text">华南农业大学创创业学院<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您：<s:property value="#session.name"/></small>
 					</p>
 				</div>
 				<h4 class="blok-right">
-							<a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+							<a href="Exit.action"><span class="glyphicon glyphicon-remove"></span></a>
 						</h4>
 			</div>
 		</nav>
@@ -86,7 +86,7 @@
 			</div>
 		</s:form>
 		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/jsp/humanDepartment/peopleTeamManage/admin/js/bootstrap.min.js"></script>
 	</body>
 
 </html>

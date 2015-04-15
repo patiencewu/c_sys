@@ -42,7 +42,7 @@ public class SuperMangerToDepartmentManager extends BaseAction
 		user.setUpId(null);
 		uService.addUser(user);
 		
-		return "addSuccess";
+		return goToManageDM();
 	}
 
 //	删除对应账号的部长
@@ -77,7 +77,7 @@ public class SuperMangerToDepartmentManager extends BaseAction
 		UserpasswordService uService = (UserpasswordService) SpringUtil.getBean("userpasswordService");
 
 		//pageResults2表示没有录入详细信息的部长
-		pageResults2 = uService.findAllUserInPage("from Userpassword as a where a.upPower>=111 and a.upPower<=114", null, 1, 10);
+		pageResults2 = uService.findAllUserInPage("from Userpassword as a where a.upPower>=110 and a.upPower<=114", null, 1, 10);
 		//pageResults1表示录入了详细信息的部长的账号密码
 		pageResults1 = uService.findAllUserInPage("from Userpassword as a where a.upPower = 2 order by a.upId asc", null, 1, 10);
 		//pageResults表示部长的详细信息
@@ -87,10 +87,10 @@ public class SuperMangerToDepartmentManager extends BaseAction
 	
 //	修改对应的密码
 	public String changePassword(){
-		if(!newPassword.equals(confirmPassword)) return "changeError";
+		if(!newPassword.equals(confirmPassword)) {message = "密码修改失败";return "changeError";}
 		SupermanagerService service = (SupermanagerService) SpringUtil.getBean("supermanagerService");
 		if(oldPassword == null || newPassword == null) System.out.println("密码没有传递成功");
-		if(!service.changePassword((int)session.get("id"), oldPassword, newPassword)) return "changeError";
+		if(!service.changePassword((int)session.get("id"), oldPassword, newPassword)) {message = "密码修改失败";return "changeError";}
 		message = "密码修改成功";
 		return "superManager";
 	}
