@@ -25,5 +25,8 @@
         <property name="IMessage" type="java.lang.String">
             <column name="i_message" />
         </property>
+        <property name="IType" type="java.lang.Integer">
+            <column name="i_type" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -2,6 +2,7 @@ package org.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.ScrollableResults;
 import org.hibernate.Session;
@@ -24,9 +26,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
 * @ClassName: BaseDao
-* @Description: baseDao实现
-* @author yz
-* @date 2014年6月16日17:09:52
+* @Description: IBaseDao的实现
+* @author 吴培胜
+* @date 2015年4月20日17:09:52
 *
 */
 @SuppressWarnings({ "rawtypes", "unchecked" })
@@ -37,6 +39,10 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    protected Class<T> entityClass;
    
    public BaseDao() {
+	   Type genType = getClass().getGenericSuperclass();
+	   Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
+	   entityClass =  (Class)params[0];
+	   System.out.println( "\n!!!！！！Dao初始化当前环境成功，entityClass=[" + entityClass + "]\n\n" );
    }
    
    public BaseDao(Class clazz) {
@@ -59,6 +65,10 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
        if (entityClass == null) {
     	   System.out.println("请对BaseDao类先设定实体类型");
     	   return null;
+//    	   Type genType = getClass().getGenericSuperclass();
+//           Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
+//           entityClass =  (Class)params[0];
+//    	   上面这个和下面这个是一样的，但是推荐使用跟上面这个注释遮样的
 //           entityClass = (Class<T>) ((ParameterizedType)getClass().getGenericSuperclass()).getActualTypeArguments()[0];
        }
        return entityClass;

@@ -75,7 +75,7 @@
 										<s:iterator value="pageResults.results" status="stuts" var="men">
 										<tr>
 											<td><s:property value="deName"/></td>
-											<s:if test='#session.power == "2"'><td><s:property value='pageResults1.results.{?#this.upId == #men.deId}.{upUser}[0]'/></td></s:if><!--<s:property value="persons.{?#this.name=='pla1'}.{age}[0]"/>-->
+											<s:if test='#session.power == "2"'><td><s:property value='pageResults1.results.{?#this.upId == #men.deId}.{upUser}[0]'/></td></s:if>
 											<s:if test='#session.power == "2"'><td><s:property value="pageResults1.results.{?#this.upId == #men.deId}.{upPassword}[0]"/></td></s:if>
 											<td><s:if test="deDepartmentId == 1">人事部</s:if ><s:elseif test="deDepartmentId == 2">行政部</s:elseif><s:elseif test="deDepartmentId == 3">财务部</s:elseif><s:elseif test="deDepartmentId == 4">宣传部</s:elseif></td>
 											<td><s:property value="deSex"/></td>

@@ -1,25 +1,11 @@
 package org.humanDepartment.humanSystem.action;
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.ServletContext;
-import  javax.servlet.http.HttpServletRequest;
-
 import org.BaseAction;
-import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.interceptor.ServletRequestAware;
-import org.apache.struts2.interceptor.SessionAware;
-import org.apache.struts2.util.ServletContextAware;
-import org.dao.BaseDao;
 import org.dao.PageResults;
 import org.dao.service.interf.DepartmentemployeeService;
 import org.dao.service.interf.DepartmentmanagerService;
 import org.dao.service.interf.MembersService;
 import org.dao.service.interf.SupermanagerService;
 import org.dao.service.interf.UserpasswordService;
-
-import com.opensymphony.xwork2.ActionSupport;
 
 import org.humanDepartment.humanSystem.pojo.Departmentemployee;
 import org.humanDepartment.humanSystem.pojo.Departmentmanager;

@@ -14,8 +14,7 @@
 	                    http://www.springframework.org/schema/tx 
 	                    http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<!-- 注释驱动器 -->
-	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
 	<!-- 开启组建自动扫描，扫描的路径有base-package属性指定  -->
 	<context:component-scan base-package="org.dao" />
 	<context:component-scan base-package="org.dao.service"/>
@@ -89,6 +88,9 @@
             <tx:method name="*" rollback-for="Exception"/>
         </tx:attributes>
     </tx:advice>
+    
+    <!-- 注释驱动器 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 
 	<aop:config proxy-target-class="true"> 
 	<!-- 只对业务逻辑层实施事务 -->

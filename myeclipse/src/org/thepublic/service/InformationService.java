@@ -3,17 +3,10 @@ package org.thepublic.service;
 import org.dao.BaseDao;
 import org.thepublic.pojo.Information;
 
-public class InformationService extends ThePublicServiceImpl<Information>
+public class InformationService extends BaseDao<Information, Integer>
 {
-
-	/* （非 Javadoc）
-	 * @see org.thepublic.service.ThePublicServiceImpl#setDao(org.dao.BaseDao)
-	 */
-	@Override
-	public void setDao(BaseDao<Information, Integer> dao)
-	{
-		super.dao =  (BaseDao<Information, Integer>) dao;
-		super.dao.setEntityClass(Information.class);
+//	TODO 这里是关于Information的所有的操作，暂时通过BaseDao属于模板操作
+	public InformationService(){
+		super();
 	}
-
 }

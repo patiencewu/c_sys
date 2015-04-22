@@ -1,14 +1,10 @@
-
 package org.thepublic.pojo;
-
 
 /**
  * Information entity. @author MyEclipse Persistence Tools
  */
 
-public class Information implements java.io.Serializable
-{
-
+public class Information implements java.io.Serializable {
 
 	// Fields
 
@@ -18,91 +14,82 @@ public class Information implements java.io.Serializable
 	private Short IRespondPower;
 	private Integer IRespondId;
 	private String IMessage;
-
+	private Integer IType;
 
 	// Constructors
 
 	/** default constructor */
-	public Information()
-	{}
-
+	public Information() {
+	}
 
 	/** full constructor */
-	public Information(Short IRequestPower,
-					   Integer IRequestId,
-					   Short IRespondPower,
-					   Integer IRespondId,
-					   String IMessage)
-	{
+	public Information(Short IRequestPower, Integer IRequestId,
+			Short IRespondPower, Integer IRespondId, String IMessage,
+			Integer IType) {
 		this.IRequestPower = IRequestPower;
 		this.IRequestId = IRequestId;
 		this.IRespondPower = IRespondPower;
 		this.IRespondId = IRespondId;
 		this.IMessage = IMessage;
+		this.IType = IType;
 	}
-
 
 	// Property accessors
 
-	public Integer getIId()
-	{
+	public Integer getIId() {
 		return this.IId;
 	}
 
-	public void setIId(Integer IId)
-	{
+	public void setIId(Integer IId) {
 		this.IId = IId;
 	}
 
-	public Short getIRequestPower()
-	{
+	public Short getIRequestPower() {
 		return this.IRequestPower;
 	}
 
-	public void setIRequestPower(Short IRequestPower)
-	{
+	public void setIRequestPower(Short IRequestPower) {
 		this.IRequestPower = IRequestPower;
 	}
 
-	public Integer getIRequestId()
-	{
+	public Integer getIRequestId() {
 		return this.IRequestId;
 	}
 
-	public void setIRequestId(Integer IRequestId)
-	{
+	public void setIRequestId(Integer IRequestId) {
 		this.IRequestId = IRequestId;
 	}
 
-	public Short getIRespondPower()
-	{
+	public Short getIRespondPower() {
 		return this.IRespondPower;
 	}
 
-	public void setIRespondPower(Short IRespondPower)
-	{
+	public void setIRespondPower(Short IRespondPower) {
 		this.IRespondPower = IRespondPower;
 	}
 
-	public Integer getIRespondId()
-	{
+	public Integer getIRespondId() {
 		return this.IRespondId;
 	}
 
-	public void setIRespondId(Integer IRespondId)
-	{
+	public void setIRespondId(Integer IRespondId) {
 		this.IRespondId = IRespondId;
 	}
 
-	public String getIMessage()
-	{
+	public String getIMessage() {
 		return this.IMessage;
 	}
 
-	public void setIMessage(String IMessage)
-	{
+	public void setIMessage(String IMessage) {
 		this.IMessage = IMessage;
 	}
 
+	public Integer getIType() {
+		return this.IType;
+	}
+
+	public void setIType(Integer IType) {
+		this.IType = IType;
+	}
 
 }

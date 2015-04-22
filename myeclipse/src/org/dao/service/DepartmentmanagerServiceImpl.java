@@ -81,7 +81,7 @@ public class DepartmentmanagerServiceImpl implements DepartmentmanagerService
 	@Override
 	public void deleteById(int id)
 	{
-		dao.deleteById(id);
+		this.delete(this.findById(id));
 		
 	}
 

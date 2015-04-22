@@ -1,6 +1,7 @@
 package org.humanDepartment.humanSystem.action;
 
 import org.BaseAction;
+import org.dao.PageResults;
 import org.dao.service.interf.MembersService;
 import org.dao.service.interf.TeamService;
 import org.humanDepartment.humanSystem.pojo.Members;
@@ -13,7 +14,9 @@ public class MemberToTeam extends BaseAction
 	private TeamService tService;
 	private MembersService mService;
 	private Team team;
+	private PageResults<Team> allTeam;
 	
+//	组建团队
 	/**
 	 * 新一个团队，建立一个全新的团队（暂时不包含有其他成员），暂时只有队长
 	 * @return
@@ -49,6 +52,7 @@ public class MemberToTeam extends BaseAction
 		return "builTeam";
 	}
 	
+//	退出团队
 	/**
 	 * 离开团队，如果是队长，则要先提拔一人为队长才可以，否则解散团队
 	 * @return
@@ -65,5 +69,41 @@ public class MemberToTeam extends BaseAction
 		return "leaveSuccess";
 	}
 	
+//	TODO 确认加入团队
+//	查看本团队
+	public String checkMyTeam(){
+		Members member = mService.findById(Integer.valueOf(session.get("id").toString()));
+		team = tService.findById(member.getMTeamId());
+		return "teamDetail";
+	}
+//	查看其它所有团队
+	public String checkAllTeam(){
+		allTeam = tService.findAPage(null, "select count(*) from Team", 0, 10);
+		return "allTeam";
+	}
+//	修改团队信息
+	public String changeMyTeamDetail(){
+		if(team == null) return null;
+		tService.update(team);
+		message = "修改成功";
+		return "changeTeamDetailSuccess";
+	}
+//	解散团队
+	public String dismissTeam(){
+		Members member = mService.findById(Integer.valueOf(session.get("id").toString()));
+		PageResults<Members> thisTeamMembers = mService.findAPage("from Members as a where a.MTeamId = " + member.getMTeamId(), null, 0, 50);
+		for(Members m : thisTeamMembers.getResults()){
+			Members mm = m;
+			mm.setMTeamId(null);
+			mm.setMTeamName(null);
+			mService.update(mm);
+		}
+		team = tService.findById(member.getMTeamId());
+		team.setTName(team.getTName() + "（已解散）");
+		team.setTStatus("已解散");
+		tService.update(team);
+		return "TeamDismiss";
+	}
+//	TODO 以下是getter和setter
 	
 }
