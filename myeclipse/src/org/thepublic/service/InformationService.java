@@ -1,12 +1,10 @@
 package org.thepublic.service;
 
 import org.dao.BaseDao;
+import org.dao.PageResults;
 import org.thepublic.pojo.Information;
+import org.thepublic.service.interf.ThePublicService;
 
 public class InformationService extends BaseDao<Information, Integer>
 {
-//	TODO 这里是关于Information的所有的操作，暂时通过BaseDao属于模板操作
-	public InformationService(){
-		super();
-	}
 }

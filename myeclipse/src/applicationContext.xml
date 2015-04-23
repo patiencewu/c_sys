@@ -48,6 +48,7 @@
 				<value>org/humanDepartment/humanSystem/pojo/Supermanager.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Team.hbm.xml</value>
 				<value>org/humanDepartment/humanSystem/pojo/Userpassword.hbm.xml</value>
+				<value>org/thepublic/pojo/Information.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -284,4 +285,18 @@
 		class="org.humanDepartment.humanSystem.action.Manager"
 		abstract="false" lazy-init="default" autowire="default"
 		scope="prototype">
-	</bean></beans>
+	</bean>
+	<bean id="information" class="org.thepublic.pojo.Information"
+		abstract="false" lazy-init="default" autowire="default">
+	</bean>
+	<bean id="informationService"
+		class="org.thepublic.service.InformationService" abstract="false"
+		lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		<property name="pojo">
+			<ref bean="information" />
+		</property>
+	</bean>
+	</beans>

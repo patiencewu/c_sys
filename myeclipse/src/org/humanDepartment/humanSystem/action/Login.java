@@ -6,7 +6,6 @@ import org.dao.service.interf.DepartmentmanagerService;
 import org.dao.service.interf.MembersService;
 import org.dao.service.interf.SupermanagerService;
 import org.dao.service.interf.UserpasswordService;
-
 import org.humanDepartment.humanSystem.pojo.Departmentemployee;
 import org.humanDepartment.humanSystem.pojo.Departmentmanager;
 import org.humanDepartment.humanSystem.pojo.Members;
@@ -14,6 +13,9 @@ import org.humanDepartment.humanSystem.pojo.Supermanager;
 import org.humanDepartment.humanSystem.pojo.Team;
 import org.humanDepartment.humanSystem.pojo.Userpassword;
 import org.model.SpringUtil;
+import org.springframework.transaction.annotation.Transactional;
+import org.thepublic.pojo.Information;
+import org.thepublic.service.InformationService;
 
 public class Login extends BaseAction
 {

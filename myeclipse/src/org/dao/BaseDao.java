@@ -3,6 +3,7 @@ package org.dao;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,20 +36,31 @@ import org.springframework.transaction.annotation.Transactional;
 public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
     
    @Autowired
-   private SessionFactory sessionFactory;
+   protected SessionFactory sessionFactory;
+   private T pojo;
+   private String entityName;
    protected Class<T> entityClass;
    
    public BaseDao() {
-	   Type genType = getClass().getGenericSuperclass();
-	   Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
-	   entityClass =  (Class)params[0];
-	   System.out.println( "\n!!!！！！Dao初始化当前环境成功，entityClass=[" + entityClass + "]\n\n" );
+//	   Type genType = getClass().getGenericSuperclass();
+//	   ParameterizedType gggType = (ParameterizedType) genType;
+//	   Type[] params = gggType.getActualTypeArguments();
+//	   entityClass =  (Class)params[0];
+//	   System.out.println( "\n!!!！！！Dao初始化当前环境成功，entityClass=[" + entityClass + "]\n\n" );
+   }
+   public BaseDao(T pojo) {
+	   this.pojo = pojo;
    }
    
    public BaseDao(Class clazz) {
 	   entityClass = clazz;
    }
 
+   public String getEntityName(){
+	   if(entityName == null)
+		   entityName = pojo.getClass().getName();
+	   return entityName;
+   }
    
    public void setEntityClass(Class<T> entityClass)
 {
@@ -63,8 +75,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    
    protected Class getEntityClass() {
        if (entityClass == null) {
-    	   System.out.println("请对BaseDao类先设定实体类型");
-    	   return null;
+    	   entityClass = (Class<T>) pojo.getClass();
 //    	   Type genType = getClass().getGenericSuperclass();
 //           Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 //           entityClass =  (Class)params[0];
@@ -105,7 +116,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    @Override
    public T load(ID id) {
 	   if(this.entityClass != null){
-       T load = (T) this.getSession().load(getEntityClass(), id); System.out.println("找到实体" + load);
+       T load = (T) this.getSession().load(getEntityName(), id); System.out.println("找到实体" + load);
        return load;
 	   }
 	   else System.out.println("entityName字段为空，未知道的数据库实体");
@@ -121,12 +132,12 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
     */
    @Override
    public T get(ID id) {
-	   if(this.entityClass != null){
-	       T load = (T) this.getSession().get(getEntityClass(), id); System.out.println("找到实体" + load);
+	   {
+	       T load = (T) this.getSession().get(getEntityName(), id); System.out.println("找到实体" + load);
 	       return load;
 		   }
-		   else System.out.println("entityName字段为空，未知道的数据库实体");
-			  return null;
+//		   else System.out.println("entityName字段为空，未知道的数据库实体");
+//			  return null;
    }
     
    /**
@@ -523,4 +534,7 @@ public class BaseDao<T,ID extends Serializable> implements IBaseDao<T, ID>{
    protected Class getTheEntityClass(Class clazz){
 	   return entityClass = clazz;
    }
+public void setPojo(T pojo) {
+	this.pojo = pojo;
+}
 }
