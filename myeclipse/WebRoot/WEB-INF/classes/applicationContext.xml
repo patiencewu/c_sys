@@ -75,6 +75,9 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+	<!-- 注释驱动器 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
 	<tx:advice id="baseServiceAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="get*" read-only="true" propagation="REQUIRED" rollback-for="Exception"/><!--之前是NOT_SUPPORT-->
@@ -90,11 +93,8 @@
         </tx:attributes>
     </tx:advice>
     
-    <!-- 注释驱动器 -->
-	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
-
-	<aop:config proxy-target-class="true"> 
-	<!-- 只对业务逻辑层实施事务 -->
+    <aop:config proxy-target-class="true"> 
+	<!-- 实施事务 -->
 	<aop:advisor advice-ref="baseServiceAdvice" pointcut="execution(* org.dao.service..*.*(..))" /> 
 	</aop:config>
 	
